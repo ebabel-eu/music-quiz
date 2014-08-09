@@ -1,0 +1,40 @@
+<div class="list-group">
+    <div class="list-group-item">
+        <h1>Musical Quiz<br>
+            <small>Powered by Decibel deep music discovery API</small>
+        </h1>
+    </div>
+    <div class="list-group-item media">
+        <div class="media-body">
+            <form role="form" ng-controller="decibelAccountController">
+                <p><a href="//developer.decibel.net/signup">Signup to the Decibel API</a> to play this musical quiz.</p>
+                <ol>
+                    <li>Create an application<br><small>Name it "Musical Quiz" for example.</small></li>
+                    <li>Make a note of your Application ID and your Application Keys</li>
+                </ol>
+
+                <fieldset class="form-group">
+                    <input bs-form-control type="text" ng-model="decibelAccount.applicationId" 
+                            label="Application ID" label-class="col-xs-12 col-sm-12 col-lg-12" class="col-xs-12 col-sm-12 col-lg-12" 
+                            placeholder="Your decibel API Application ID">
+
+                    <input bs-form-control type="text" ng-model="decibelAccount.applicationKeys" 
+                            label="Application Keys" label-class="col-xs-12 col-sm-12 col-lg-12" class="col-xs-12 col-sm-12 col-lg-12" 
+                            placeholder="Your decibel API Application Keys">
+
+                    <div class="form-group row">
+                        <div class="col-xs-12 col-sm-12 col-lg-12">
+                            <button class="btn btn-primary btn-lg no-outline"
+                                    title="Next">Play</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="list-group-item media">
+        <div class="media-body">
+            applicationId: {{decibelAccount.applicationId}}
+        </div>
+    </div>
+</div>

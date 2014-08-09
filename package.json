@@ -1,0 +1,22 @@
+{
+    "name": "musicQuiz",
+    "description": "Music quiz using the Decibel API.",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "4.8.2"
+    },
+    "devDependencies": {
+        "grunt": "0.4.5",
+        "grunt-cli": "0.1.13",
+        "grunt-contrib-clean": "0.6.0",
+        "grunt-contrib-concat": "0.5.0",
+        "grunt-contrib-cssmin": "0.10.0",
+        "grunt-contrib-htmlmin": "0.3.0",
+        "grunt-contrib-uglify": "0.5.1",
+        "karma": "0.12.21",
+        "karma-coverage": "0.2.6",
+        "karma-jasmine": "0.1.5",
+        "karma-phantomjs-launcher": "0.1.4"
+    }
+}

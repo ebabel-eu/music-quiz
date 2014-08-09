@@ -1,0 +1,1 @@
+var musicQuizApp = angular.module('musicQuizApp', []);
