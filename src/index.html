@@ -54,56 +54,8 @@
             </div>
         </div>
 
-        <div class="container">
-            <div class="page-header">
-                <h1>Music Quiz</h1>
-                <p class="lead">Music Quiz is a game that leverages the Decibel API to ask questions about music.</p>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <form class="form-signup">
-                        <h2 class="form-signup-heading">Free account</h2>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Full name" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Email address" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" required>
-                        </div>
-                        <label class="checkbox">
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-
-                        <p>Your e-mail is safe, it will never be sold to anyone. Ever.</p>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-                    </form>
-                </div>
-                <div class="col-md-4">
-                    <h2>Why sign up?</h2>
-                    <p>Once you have created your account, you can play this Music Quiz game.</p>
-                </div>
-                <div class="col-md-4">
-                    <form class="form-signin">
-                        <h2 class="form-signin-heading">Sign in</h2>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Email address" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" required>
-                        </div>
-
-                        <label class="checkbox">
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                    </form>
-                </div>
-            </div>
+        <div ng-controller="mainController as main">
+            <div ng-view></div>
         </div>
 
         <script src="js/app.concat.js"></script>
