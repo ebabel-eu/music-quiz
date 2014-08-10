@@ -1,12 +1,11 @@
 // Concatenate and minify css and javascript files.
 module.exports = function (grunt) {
-
     grunt.config.init({
         concat: {
             options: {
                 separator: ';'
             },
-            dependencies: {
+            js: {
                 files: {
                     './src/js/dependencies.concat.js' : [
                         './bower_components/angular/angular.js',
@@ -14,11 +13,33 @@ module.exports = function (grunt) {
                         './bower_components/angular-route/angular-route.js',
                         './bower_components/angular-bootstrap/ui-bootstrap.js',
                         './bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+                    ],
+                    './src/js/app.concat.js': [
+                        'src/js/app.js',
+                        'src/js/config.js',
+                        'src/js/models/*.js',
+                        'src/js/controllers/*.js'
+                    ]
+                }
+            }
+        },
+
+        uglify: {
+            options: {
+                compress: false,
+                preserveComments: false
+            },
+            js: {
+                files: {
+                    './dist/js/dependencies.min.js': [
+                        './src/js/dependencies.concat.js'
+                    ],
+                    './dist/js/app.min.js': [
+                        './src/js/app.concat.js'
                     ]
                 }
             }
         }
-
     });
 
     // Grunt plugins.
@@ -30,7 +51,7 @@ module.exports = function (grunt) {
     // Register which tasks to run.
     grunt.registerTask('default', [
         'concat',
-        // 'uglify', 
+        'uglify', 
         // 'cssmin',
         // 'clean'
     ]);
