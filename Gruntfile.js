@@ -1,6 +1,8 @@
-// Concatenate and minify css and javascript files.
+// Build both the source that can run directly locally and the distribution package to release to a production environment.
 module.exports = function (grunt) {
     grunt.config.init({
+
+        // Concatenate the javascript files.
         concat: {
             options: {
                 separator: ';'
@@ -11,6 +13,8 @@ module.exports = function (grunt) {
                         './bower_components/angular/angular.js',
                         './bower_components/angular-mocks/angular-mocks.js',
                         './bower_components/angular-route/angular-route.js',
+                        './bower_components/jquery/dist/jquery.js',
+                        './bower_components/bootstrap-sass/dist/js/bootstrap.js',
                         './bower_components/angular-bootstrap/ui-bootstrap.js',
                         './bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
                     ],
@@ -24,6 +28,7 @@ module.exports = function (grunt) {
             }
         },
 
+        // Minify the javascript files.
         uglify: {
             options: {
                 compress: false,
@@ -41,6 +46,7 @@ module.exports = function (grunt) {
             }
         },
 
+        // Minify the css files.
         cssmin: {
             options: {
                 keepSpecialComments: '0'
@@ -54,6 +60,7 @@ module.exports = function (grunt) {
             }
         },
 
+        // Copy certain files.
         copy: {
             main: {
                 files: [

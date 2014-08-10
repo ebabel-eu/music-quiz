@@ -4990,3 +4990,5 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
+body {
+  padding-top: 3.57143em; }
