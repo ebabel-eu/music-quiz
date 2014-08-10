@@ -1,1 +1,1 @@
-var musicQuizApp = angular.module('musicQuizApp', []);
+var musicQuizApp = angular.module('musicQuizApp', ['ngRoute']);

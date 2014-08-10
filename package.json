@@ -4,6 +4,7 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
+        "compression": "1.0.10",
         "express": "4.8.2"
     },
     "devDependencies": {
