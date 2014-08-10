@@ -52,7 +52,30 @@ module.exports = function (grunt) {
                     ],
                 }
             }
-        }
+        },
+
+        copy: {
+            main: {
+                files: [
+                    {
+                        // Copy bootstrap fonts to this website source directory.
+                        expand: true, 
+                        flatten: true, 
+                        src: ['./bower_components/bootstrap-sass/fonts/**'], 
+                        dest: './src/fonts/', 
+                        filter: 'isFile'
+                    },
+                    {
+                        // Copy bootstrap fonts to this website distribution package.
+                        expand: true, 
+                        flatten: true, 
+                        src: ['./bower_components/bootstrap-sass/fonts/**'], 
+                        dest: './dist/fonts/', 
+                        filter: 'isFile'
+                    }
+                ]
+            }
+        }        
 
     });
 
@@ -60,11 +83,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Register which tasks to run.
     grunt.registerTask('default', [
         'concat',
         'uglify', 
-        'cssmin'
+        'cssmin',
+        'copy'
     ]);
 };

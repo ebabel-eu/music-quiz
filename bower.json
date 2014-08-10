@@ -10,7 +10,7 @@
     "angular-mocks": "1.2.21",
     "bourbon": "4.0.2",
     "html5-boilerplate": "4.3.0",
-    "bootstrap-sass": "~3.0.2"
+    "bootstrap-sass": "3.0.2"
   },
   "homepage": "https://github.com/asm-products/music-quiz",
   "authors": [
