@@ -5,7 +5,7 @@
     "private": true,
     "dependencies": {
         "compression": "1.0.10",
-        "express": "4.8.2"
+        "express": "4.4.5"
     },
     "devDependencies": {
         "grunt": "0.4.5",

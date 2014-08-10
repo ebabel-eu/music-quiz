@@ -12,3 +12,4 @@ node_modules
 
 # Client side
 bower_components
+.sass-cache

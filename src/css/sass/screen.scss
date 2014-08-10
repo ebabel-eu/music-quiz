@@ -1,0 +1,10 @@
+// First call to make: Bourbon mixins.
+@import "../../../bower_components/bourbon/dist/_bourbon.scss";
+
+// Smacss sass structure.
+@import 
+        "1-base/_base-index.scss",
+        "2-layout/_layout-index.scss",
+        "3-module/_module-index.scss",
+        "4-state/_state-index.scss",
+        "5-theme/default/_theme-index.scss";

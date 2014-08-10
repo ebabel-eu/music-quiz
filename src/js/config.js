@@ -1,5 +1,6 @@
 musicQuizApp
 
+    // Set a mapping between url routes and views.
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {templateUrl: 'src/views/home.html'})

@@ -1,0 +1,1 @@
+See https://smacss.com/ for more information about the structure of these Sass files and directories.
