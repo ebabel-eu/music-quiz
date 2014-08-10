@@ -7,7 +7,7 @@ musicQuizApp
                 .when('/signin', {controller: 'mainController', templateUrl: 'views/signin.html'})
                 .when('/signup', {controller: 'mainController', templateUrl: 'views/signup.html'})
                 .when('/decibel-account', {templateUrl: 'views/decibelAccount.html'})
-                .when('/signin', {templateUrl: 'views/signinOrSignup.html'})
+                .when('/forgotten-signin', {templateUrl: 'views/forgottenSignin.html'})
                 .when('/404', {templateUrl: 'views/404.html'})
                 .otherwise({redirectTo: '/404'});
         }])
