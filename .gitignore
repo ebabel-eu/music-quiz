@@ -15,6 +15,7 @@ bower_components
 .sass-cache
 *.concat.js
 src/fonts
+src/css/screen.css
 
 # Distribution package
 dist
