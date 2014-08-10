@@ -39,20 +39,32 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+
+        cssmin: {
+            options: {
+                keepSpecialComments: '0'
+            },
+            combine: {
+                files: {
+                    './dist/css/screen.min.css': [
+                        './src/css/screen.css'
+                    ],
+                }
+            }
         }
+
     });
 
     // Grunt plugins.
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Register which tasks to run.
     grunt.registerTask('default', [
         'concat',
         'uglify', 
-        // 'cssmin',
-        // 'clean'
+        'cssmin'
     ]);
 };
