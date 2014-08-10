@@ -82,7 +82,15 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-        }        
+        },
+
+        // Re-run these automated tasks each time certain files are modified.
+        watch: {
+            scripts: {
+                files: ['**/*.js'],
+                tasks: ['default']
+            }
+        }
 
     });
 
@@ -91,12 +99,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Register which tasks to run.
     grunt.registerTask('default', [
         'concat',
         'uglify', 
         'cssmin',
-        'copy'
+        'copy',
+        'watch'
     ]);
 };

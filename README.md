@@ -13,6 +13,8 @@ bower install
 grunt
 ```
 
+Note on grunt: there is watch task that will wait for any change to Javascript files to rebuild the packages. This watch is to stay in its own terminal window.
+
 ## Run unit tests
 
 The tests will re-run in the terminal every time a change is made to the unit tests.
