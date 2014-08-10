@@ -11,5 +11,25 @@
         "angular-mocks": "1.2.21",
         "bourbon": "4.0.2",
         "html5-boilerplate": "4.3.0"
-    }
+    },
+    "homepage": "https://github.com/asm-products/music-quiz",
+    "authors": [
+        "Nadjib Amar <hello@ebabel.eu>"
+    ],
+    "description": "Music Quiz is a game that leverages the Decibel API to ask questions about music.",
+    "main": "server.js",
+    "moduleType": [
+        "node"
+    ],
+    "keywords": [
+        "music",
+        "quiz",
+        "api"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ]
 }
