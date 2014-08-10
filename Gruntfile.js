@@ -68,7 +68,11 @@ module.exports = function (grunt) {
                         // Copy bootstrap fonts to this website source directory.
                         expand: true, 
                         flatten: true, 
-                        src: ['./bower_components/bootstrap-sass/fonts/**'], 
+                        src: [
+                            './bower_components/bootstrap-sass/fonts/**',
+                            './bower_components/open-sans-fontface/fonts/Light/**',
+                            './bower_components/open-sans-fontface/fonts/Semibold/**'
+                        ], 
                         dest: './src/fonts/', 
                         filter: 'isFile'
                     },
@@ -76,7 +80,11 @@ module.exports = function (grunt) {
                         // Copy bootstrap fonts to this website distribution package.
                         expand: true, 
                         flatten: true, 
-                        src: ['./bower_components/bootstrap-sass/fonts/**'], 
+                        src: [
+                            './bower_components/bootstrap-sass/fonts/**',
+                            './bower_components/open-sans-fontface/fonts/Light/**',
+                            './bower_components/open-sans-fontface/fonts/Semibold/**'
+                        ], 
                         dest: './dist/fonts/', 
                         filter: 'isFile'
                     }
@@ -87,7 +95,7 @@ module.exports = function (grunt) {
         // Re-run these automated tasks each time certain files are modified.
         watch: {
             scripts: {
-                files: ['./src/js/**/*.js', '!./src/js/**/*.concat.js'],
+                files: ['./Gruntfile.js', './src/js/**/*.js', '!./src/js/**/*.concat.js'],
                 tasks: ['default']
             }
         }

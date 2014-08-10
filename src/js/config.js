@@ -16,4 +16,4 @@ musicQuizApp
         }])
 
         // Make built in filters from AngularJS accessible.
-        .config(['$filterProvider', function ($filterProvider) {}]);
+        .config(['$filterProvider', function ($filterProvider) {}]); 
