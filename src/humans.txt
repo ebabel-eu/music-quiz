@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Nadjib Amar -- Developer -- @ebabel
+
+# THANKS
+
+    Evan Stein, for creating the Decibel music API.
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    AngularJS, Angular Bootstrap, Twitter Bootstrap, Sass, Bourbon, HTML5 Boilerplate
+    NodeJS
+    Karma, Jasmine, PhantomJS
+    npm, bower, git
+    github
