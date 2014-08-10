@@ -1,3 +1,27 @@
+// Default fonts for this website.
 @mixin default-fonts {
     font-family: "Open Sans", "Lucida Grande", "Segoe UI", "Droid Sans", Verdana, Arial, sans-serif;
+}
+
+// Partial media query for a given style.
+@mixin respond-to($size) {
+
+    /* Extra small devices (phones, less than 768px) */
+    /* No media query since this is the default in Bootstrap */
+
+    /* Small devices (tablets, 768px and up) */
+    @if $size == sm {
+        @media (min-width: $screen-sm-min) { @content; }
+    }
+
+    /* Medium devices (desktops, 992px and up) */
+    @if $size == md {
+        @media (min-width: $screen-md-min) { @content; }
+    }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @if $size == lg {
+        @media (min-width: $screen-lg-min) { @content; }
+    }
+    
 }

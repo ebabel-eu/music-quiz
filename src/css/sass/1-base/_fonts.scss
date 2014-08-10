@@ -1,27 +1,8 @@
-/* Open Sans @font-face kit */
-
+// Open Sans @font-face kit
 $OpenSansPath: "../fonts" !default;
 
-/* BEGIN Light */
-@font-face {
-  font-family: 'Open Sans';
-  src: url('#{$OpenSansPath}/OpenSans-Light.eot');
-  src: url('#{$OpenSansPath}/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
-       url('#{$OpenSansPath}/OpenSans-Light.woff') format('woff'),
-       url('#{$OpenSansPath}/OpenSans-Light.ttf') format('truetype'),
-       url('#{$OpenSansPath}/OpenSans-Light.svg#OpenSansLight') format('svg');
-  font-weight: 300;
-  font-style: normal;
-}
-/* END Light */
+// Light
+@include font-face("Open Sans", #{$OpenSansPath}/OpenSans-Light, 300, normal, false);
 
-@font-face {
-  font-family: 'Open Sans';
-  src: url('#{$OpenSansPath}/OpenSans-Semibold.eot');
-  src: url('#{$OpenSansPath}/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
-       url('#{$OpenSansPath}/OpenSans-Semibold.woff') format('woff'),
-       url('#{$OpenSansPath}/OpenSans-Semibold.ttf') format('truetype'),
-       url('#{$OpenSansPath}/OpenSans-Semibold.svg#OpenSansBold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
+// Semibold
+@include font-face("Open Sans", #{$OpenSansPath}/OpenSans-Semibold, bold, normal, false);
