@@ -87,7 +87,7 @@ module.exports = function (grunt) {
         // Re-run these automated tasks each time certain files are modified.
         watch: {
             scripts: {
-                files: ['**/*.js'],
+                files: ['./src/js/**/*.js', '!./src/js/**/*.concat.js'],
                 tasks: ['default']
             }
         }

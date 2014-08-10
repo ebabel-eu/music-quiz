@@ -6,4 +6,4 @@ musicQuizApp.controller('mainController', ['$scope', '$location',
         $scope.$location = $location;
     }
 
-]);
+]); 
