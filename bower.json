@@ -1,14 +1,15 @@
 {
-  "name": "musicQuiz",
-  "version": "0.0.1",
-  "dependencies": {
-    "angular": "1.2.21",
-    "angular-route": "1.2.21",
-    "angular-bootstrap": "0.11.0",
-    "bootstrap": "3.1.1"
-  },
-  "devDependencies": {
-    "angular-mocks": "1.2.21",
-    "bourbon": "~4.0.2"
-  }
+    "name": "musicQuiz",
+    "version": "0.0.1",
+    "dependencies": {
+        "angular": "1.2.21",
+        "angular-route": "1.2.21",
+        "angular-bootstrap": "0.11.0",
+        "bootstrap": "3.1.1"
+    },
+    "devDependencies": {
+        "angular-mocks": "1.2.21",
+        "bourbon": "4.0.2",
+        "html5-boilerplate": "4.3.0"
+    }
 }
