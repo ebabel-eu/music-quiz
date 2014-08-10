@@ -1,11 +1,16 @@
 # Music Quiz
 Music Quiz is an app that leverages the Decibel API to ask questions about music.
 
+## Dependencies
+
+[http://nodejs.org/](Install NodeJS) to enable running the website from source locally and installing further dependencies with npm, Bower amd Grunt.
+
 ## Install this music quiz web app
 
 ```
 npm install
 bower install
+grunt
 ```
 
 ## Run unit tests
