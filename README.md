@@ -7,21 +7,27 @@ Music Quiz is an app that leverages the Decibel API to ask questions about music
 
 ## Install this music quiz web app
 
-1. Install npm packages and bower libraries:
+### npm and bower
+
+Install npm packages and bower libraries:
 
 ```
 npm install
 bower install
 ```
 
-2. Start the batch process that will watch for changes to the css styles and combine a single screen.css file from Sass:
+### Sass
+
+Start the batch process that will watch for changes to the css styles and combine a single screen.css file from Sass:
 
 ```
 open the directory ./src/css/sass/
 double click on watch.bat to open it and start its process (Windows only)
 ```
 
-3. Run Grunt automated tasks:
+### Grunt
+
+Run Grunt automated tasks:
 
 ```
 grunt
