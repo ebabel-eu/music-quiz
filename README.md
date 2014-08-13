@@ -27,6 +27,12 @@ double click on watch.bat to open it and start its process (Windows only)
 
 ### Grunt
 
+If you haven't already installed Grunt in your development environment, do so:
+
+```
+npm install -g grunt-cli
+```
+
 Run Grunt automated tasks:
 
 ```
