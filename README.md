@@ -65,6 +65,11 @@ Open index.html from:
 ./unit-tests/coverage/[your browser and OS name]/index.html
 ```
 
+## Facebook login
+
+OAuth from the [https://developers.facebook.com/docs/facebook-login/login-flow-for-web/v2.1](Facebook login is documented) on the official Facebook developer website.
+
+
 ## Assembly community
 
 This is a product being built by the Assembly community. You can help push this idea forward by visiting [https://assembly.com/music-quiz](https://assembly.com/music-quiz).
