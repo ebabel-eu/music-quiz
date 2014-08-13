@@ -8,6 +8,7 @@
 
     </head>
     <body>
+        <div id="fb-root"></div>
         <script>
             // This is called with the results from from FB.getLoginStatus().
             function statusChangeCallback(response) {
@@ -47,7 +48,7 @@
                 cookie     : true,  // enable cookies to allow the server to access 
                                                         // the session
                 xfbml      : true,  // parse social plugins on this page
-                version    : 'v2.0' // use version 2.0
+                version    : 'v2.1' // use version 2.1
             });
 
             // Now that we've initialized the JavaScript SDK, we call 
@@ -81,7 +82,7 @@
             // successful.  See statusChangeCallback() for when this call is made.
             function testAPI() {
                 console.log('Welcome!  Fetching your information.... ');
-                FB.api("/v2.1/me?fields=name,firstname,lastname,email,picture,gender", function(response) { 
+                FB.api("/v2.1/me?fields=name,first_name,last_name,email,picture,gender", function(response) { 
                     console.log('Successful login for: ' + response.name);
                     console.log(response);
                     document.getElementById('status').innerHTML =
@@ -96,11 +97,8 @@
             the FB.login() function when clicked.
         -->
 
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-        </fb:login-button>
+        <fb:login-button scope="public_profile,email" max_rows="3" size="xlarge" show_faces="true" auto_logout_link="false" onlogin="checkLoginState();"></fb:login-button>
 
-        <div id="status">
-        </div>
-
+        <div id="status"></div>
     </body>
 </html>
