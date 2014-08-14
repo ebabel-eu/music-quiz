@@ -17,3 +17,4 @@
     Karma, Jasmine, PhantomJS
     npm, bower, git
     github
+    Facebook Graph API

@@ -27,6 +27,12 @@ double click on watch.bat to open it and start its process (Windows only)
 
 ### Grunt
 
+If you haven't already installed Grunt in your development environment, do so:
+
+```
+npm install -g grunt-cli
+```
+
 Run Grunt automated tasks:
 
 ```
@@ -58,6 +64,11 @@ Open index.html from:
 ```
 ./unit-tests/coverage/[your browser and OS name]/index.html
 ```
+
+## Facebook login
+
+OAuth from the [https://developers.facebook.com/docs/facebook-login/login-flow-for-web/v2.1](Facebook login is documented) on the official Facebook developer website. The [https://developers.facebook.com/docs/plugins/login-button](login button is documented) on the same site.
+
 
 ## Assembly community
 
