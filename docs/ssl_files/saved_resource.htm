@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<!-- saved from url=(0433)http://disqus.com/embed/comments/?base=default&disqus_version=30416eb5&f=greengeckodesign&t_i=http%3A%2F%2Fgreengeckodesign.com%2Fblog%2F2013%2F06%2F15%2Fcreating-an-ssl-certificate-for-node-dot-js%2F&t_u=http%3A%2F%2Fgreengeckodesign.com%2Fblog%2F2013%2F06%2F15%2Fcreating-an-ssl-certificate-for-node-dot-js%2F&t_d=Creating%20an%20SSL%20Certificate%20for%20Node.js&t_t=Creating%20an%20SSL%20Certificate%20for%20Node.js&s_o=default#2 -->
+<html lang="en" dir="ltr" class="js no-touch localstorage sessionstorage contenteditable use-opacity-transitions"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+    </style>
+
+<link rel="stylesheet" href="http://a.disquscdn.com/next/styles/lounge.782dea24c2652d114a75ecb3f19ed692.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="remote/config" src="config.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common.bundle" src="common.60d9e79fef4c0ce792968035d5e9f409.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lounge.bundle" src="lounge.93b8e4fe251d040398465340e52cdbf6.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="http://www.google-analytics.com/ga.js" src="ga.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="http://b.scorecardresearch.com/beacon.js" src="beacon.js"></script><style id="css_1408048132646"></style><!--<base target="_parent" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/">--><base href="." target="_parent"><script src="event.js" async="" charset="UTF-8"></script><link rel="stylesheet" href="http://a.disquscdn.com/next/styles/discovery.f142bbaa16a699cbe2208224ff08fb26.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="discovery/main" src="discovery.98e8de2555881b4bd80d1d0115fda3f3.js"></script></head>
+<body class="serif" style="">
+    
+    <!--[if lte IE 8]>
+<script src="//a.disquscdn.com/1406576647/build/vendor/ie8.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="//a.disquscdn.com/1406576647/build/vendor/ie9.js"></script>
+<![endif]-->
+
+    
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"//a.disquscdn.com/next/30416eb5"
+}</script>
+
+    
+
+    <div id="error" style="display:none; text-align: center">
+        <p>We were unable to load Disqus. If you are a moderator please see our <a href="http://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+    </div>
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"canModerate":false,"isReadOnly":null,"audienceSyncVerified":false,"canReply":true,"notificationCount":null,"mustVerifyEmail":false},"features":{},"forum":{"name":"greengecko design","founder":"26953915","settings":{"canEnableSponsoredComments":false,"discoveryVariant":null,"allowAnonPost":false,"allowMedia":true,"moderatorText":"","typeface":"auto","promotedDiscoveryEnabled":false,"discoveryMax":false,"ssoRequired":false,"discoveryLocked":false,"audienceSyncEnabled":false,"hasCustomAvatar":false,"organicDiscoveryEnabled":false,"backplaneEnabled":false,"discoverySettingsUrl":"https://greengeckodesign.disqus.com/admin/settings/ads/","discoveryThumbnailsEnabled":false,"colorScheme":"auto","sponsoredCommentsEnabled":false,"linkAffiliationEnabled":true},"url":"http://greengeckodesign.com/","favicon":{"permalink":"http://disqus.com/api/forums/favicons/greengeckodesign.jpg","cache":"//a.disquscdn.com/1406576647/images/favicon-default.png"},"language":"en","avatar":{"small":{"permalink":"http://disqus.com/api/forums/avatars/greengeckodesign.jpg?size=32","cache":"//a.disquscdn.com/1406576647/images/noavatar32.png"},"large":{"permalink":"http://disqus.com/api/forums/avatars/greengeckodesign.jpg?size=92","cache":"//a.disquscdn.com/1406576647/images/noavatar92.png"}},"pk":2399498,"id":"greengeckodesign"}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"prev":null,"total":6,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1407635433,"posts":[{"isFlagged":false,"forum":"greengeckodesign","parent":null,"author":{"username":"GuyHarwood","about":"","name":"GuyHarwood","url":"","isAnonymous":false,"rep":1.236206,"profileUrl":"http://disqus.com/GuyHarwood/","reputation":1.236206,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2011-12-09T12:49:26","id":"19980435","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/GuyHarwood.jpg","cache":"//a.disquscdn.com/uploads/users/1998/435/avatar32.jpg?1407417700"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/GuyHarwood.jpg","cache":"//a.disquscdn.com/uploads/users/1998/435/avatar92.jpg?1407417700","large":{"permalink":"http://disqus.com/api/users/avatars/GuyHarwood.jpg","cache":"//a.disquscdn.com/uploads/users/1998/435/avatar92.jpg?1407417700"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"legend. cheers","createdAt":"2014-08-07T13:21:38","id":"1531673398","thread":"1403971677","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>legend. cheers\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"greengeckodesign","parent":null,"author":{"username":"disqus_IyFTqJyqls","about":"","name":"kevin","url":"","isAnonymous":false,"rep":1.232124,"profileUrl":"http://disqus.com/disqus_IyFTqJyqls/","reputation":1.232124,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2014-08-05T14:43:48","id":"117076263","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/disqus_IyFTqJyqls.jpg","cache":"//a.disquscdn.com/uploads/users/11707/6263/avatar32.jpg?1407249835"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/disqus_IyFTqJyqls.jpg","cache":"//a.disquscdn.com/uploads/users/11707/6263/avatar92.jpg?1407249835","large":{"permalink":"http://disqus.com/api/users/avatars/disqus_IyFTqJyqls.jpg","cache":"//a.disquscdn.com/uploads/users/11707/6263/avatar92.jpg?1407249835"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"thanks a ton man. goood stuff","createdAt":"2014-08-05T14:43:54","id":"1528459210","thread":"1403971677","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>thanks a ton man. goood stuff\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"greengeckodesign","parent":null,"author":{"username":"narankhuuboldbaatar","about":"","name":"Narankhuu Boldbaatar","url":"","isAnonymous":false,"rep":1.232124,"profileUrl":"http://disqus.com/narankhuuboldbaatar/","reputation":1.232124,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2014-04-16T09:21:11","id":"103431452","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/narankhuuboldbaatar.jpg","cache":"//a.disquscdn.com/1406576647/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/narankhuuboldbaatar.jpg","cache":"//a.disquscdn.com/1406576647/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/narankhuuboldbaatar.jpg","cache":"//a.disquscdn.com/1406576647/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Well, it did help me :)","createdAt":"2014-07-06T16:56:25","id":"1470867696","thread":"1403971677","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Well, it did help me :)\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"greengeckodesign","parent":null,"author":{"username":"coolaj86","about":"I make Awesome with NodeJS.\r\n\r\n\u003c3 JavaScript","name":"AJ ONeal","url":"http://coolaj86.com/","isAnonymous":false,"rep":1.260842,"profileUrl":"http://disqus.com/coolaj86/","reputation":1.260842,"location":"Provo, UT","isPrivate":false,"isPrimary":true,"joinedAt":"2009-12-03T14:19:31","id":"1314240","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/coolaj86.jpg","cache":"//a.disquscdn.com/uploads/users/131/4240/avatar32.jpg?1403794104"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/coolaj86.jpg","cache":"//a.disquscdn.com/uploads/users/131/4240/avatar92.jpg?1403794104","large":{"permalink":"http://disqus.com/api/users/avatars/coolaj86.jpg","cache":"//a.disquscdn.com/uploads/users/131/4240/avatar92.jpg?1403794104"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Instead of removing the built-in CAs, you can supplant them with your self-signed cert as described here:\n\nhttps://github.com/coolaj86/node-ssl-root-cas","createdAt":"2014-06-26T00:49:04","id":"1454627078","thread":"1403971677","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Instead of removing the built-in CAs, you can supplant them with your self-signed cert as described here:\u003c/p>\u003cp>\u003ca href=\"https://github.com/coolaj86/node-ssl-root-cas\" rel=\"nofollow\">https://github.com/coolaj86/no...\u003c/a>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"greengeckodesign","parent":null,"author":{"username":"disqus_TpdHCpR6Jo","about":"","name":"Adriano","url":"","isAnonymous":false,"rep":1.235932,"profileUrl":"http://disqus.com/disqus_TpdHCpR6Jo/","reputation":1.235932,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2013-12-18T08:00:56","id":"86731644","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/disqus_TpdHCpR6Jo.jpg","cache":"//a.disquscdn.com/uploads/users/8673/1644/avatar32.jpg?1387353664"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/disqus_TpdHCpR6Jo.jpg","cache":"//a.disquscdn.com/uploads/users/8673/1644/avatar92.jpg?1387353664","large":{"permalink":"http://disqus.com/api/users/avatars/disqus_TpdHCpR6Jo.jpg","cache":"//a.disquscdn.com/uploads/users/8673/1644/avatar92.jpg?1387353664"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Who is app in \n\nhttps.createServer(sslOptions,app)???","createdAt":"2013-12-18T08:01:03","id":"1168472511","thread":"1403971677","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Who is app in\u003c/p>\u003cp>https.createServer(sslOptions,app)???\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"greengeckodesign","parent":1168472511,"author":{"username":"jasonjaeger","about":"","name":"jasonjaeger","url":"","isAnonymous":false,"rep":1.240847,"profileUrl":"http://disqus.com/jasonjaeger/","reputation":1.240847,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-06-02T20:56:02","id":"26953915","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/jasonjaeger.jpg","cache":"//a.disquscdn.com/uploads/users/2695/3915/avatar32.jpg?1387565364"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/jasonjaeger.jpg","cache":"//a.disquscdn.com/uploads/users/2695/3915/avatar92.jpg?1387565364","large":{"permalink":"http://disqus.com/api/users/avatars/jasonjaeger.jpg","cache":"//a.disquscdn.com/uploads/users/2695/3915/avatar92.jpg?1387565364"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Since I was using express, app would have been created something like this:\n\nvar express = require('express');\nvar app = express();\n\nhttp://expressjs.com/guide.html has more info on setting up an express project.","createdAt":"2013-12-20T18:49:23","id":"1171847193","thread":"1403971677","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Since I was using express, app would have been created something like this:\u003c/p>\u003cp>var express = require('express');\u003cbr>var app = express();\u003c/p>\u003cp>\u003ca href=\"http://expressjs.com/guide.html\" rel=\"nofollow\">http://expressjs.com/guide.htm...\u003c/a> has more info on setting up an express project.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0}],"thread":{"feed":"https://greengeckodesign.disqus.com/creating_an_ssl_certificate_for_nodejs/latest.rss","uploadAdd":"//greengeckodesign.disqus.com/thread/creating_an_ssl_certificate_for_nodejs/async_media_upload/","identifiers":["http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/"],"dislikes":0,"likes":1,"message":"","id":"1403971677","createdAt":"2013-06-15T20:39:28","category":"2435251","clean_title":"Creating an SSL Certificate for Node.js","userScore":0,"moderators":[26953915],"isDeleted":false,"hasStreaming":false,"uploadRemove":"//greengeckodesign.disqus.com/thread/creating_an_ssl_certificate_for_nodejs/async_media_remove/","isClosed":false,"link":"http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/","slug":"creating_an_ssl_certificate_for_nodejs","forum":"greengeckodesign","author":"26953915","posts":6,"userSubscription":false,"title":"Creating an SSL Certificate for Node.js","highlightedPost":null}},"order":"popular"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+    <script src="lounge.load.js"></script>
+    
+
+
+<div id="layout" data-tracking-area="layout">
+
+<div id="discovery-top" data-tracking-area="discovery-north"></div>
+
+<div id="onboard" data-tracking-area="onboard"></div>
+
+<div id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post" style="display: none;"></div>
+
+<header id="main-nav" data-tracking-area="main-nav">
+
+<nav class="nav nav-primary">
+<ul>
+<li class="tab-conversation active">
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-role="post-count" class="publisher-nav-color" data-nav="conversation">
+
+<span class="comment-count">
+
+6 comments
+
+</span>
+
+
+<span class="comment-count-placeholder">
+Comments
+</span>
+</a>
+</li>
+<li class="tab-community">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="publisher-nav-color" data-nav="community" id="community-tab">
+
+
+<span class="community-name">
+
+<strong>greengecko design</strong>
+
+</span>
+
+
+<strong class="community-name-placeholder">Community</strong>
+</a>
+</li>
+<li class="dropdown user-menu" data-role="logout">
+
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+
+<span>
+Login
+</span>
+
+
+</span> <span class="caret"></span>
+</a>
+
+<ul class="dropdown-menu">
+
+
+
+
+<li>
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="auth:google">Google</a>
+</li>
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="notification-menu" data-role="notification-menu">
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="notification-container" data-nav="dashboard">
+<span class="notification-icon icon-comment"></span>
+<span class="notification-count" data-role="notification-count"></span>
+</a>
+
+</li>
+</ul>
+</nav>
+
+</header>
+
+
+
+
+<section id="conversation" data-role="main" data-tracking-area="main">
+
+<div class="nav nav-secondary" data-tracking-area="secondary-nav">
+<ul>
+
+<li data-role="post-sort" class="dropdown sorting">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="dropdown-toggle" data-nav="conversation" data-toggle="dropdown">
+Sort by Best
+
+
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li class="selected">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="sort" data-sort="popular">Best</a>
+</li>
+
+<li>
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="sort" data-sort="desc">Newest</a>
+</li>
+
+<li>
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="sort" data-sort="asc">Oldest</a>
+</li>
+</ul>
+</li>
+
+
+<li id="thread-votes" class="favorite pull-right">
+<!-- rendered dynamically -->
+<div class="thread-likes" data-role="vote-button">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="upvote" title="Favorite this discussion">
+<span class="label">Favorite</span>
+<span class="icon-star"></span>
+<span class="icon-check"></span>
+</a>
+</div></li>
+
+<li id="thread-share-menu" class="dropdown share-menu">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="label">Share</span> <span class="icon-export"></span>
+</a>
+<ul class="share-menu dropdown-menu pull-right">
+<li class="share">Share this discussion on
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+<div id="posts">
+
+<div id="form"><form class="reply">
+<div class="alert error" style="display:none" role="alert">
+<a class="close" data-action="dismiss-alert" title="Dismiss">×</a>
+<span></span>
+</div>
+
+<div class="postbox">
+<div class="avatar">
+
+<span class="user">
+<img data-role="user-avatar" src="noavatar92.d1dee965677e7cc8d58afe004a6d8282.png">
+</span>
+
+</div>
+
+<div class="textarea-wrapper" data-role="textarea" dir="auto"><div><span class="placeholder">Join the discussion…</span><div class="textarea" tabindex="-1" role="textbox" aria-multiline="true" contenteditable="true" data-role="editable" aria-label="Join the discussion…" style="overflow: auto; max-height: 350px;"><p><br></p></div><div style="display: none;">
+<ul class="suggestions">
+<li class="header">
+<h5>in this conversation</h5>
+</li>
+</ul>
+</div></div>
+<div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+<div class="drag-text">
+⬇ Drag and drop your images here to upload them.
+</div>
+</div>
+
+<div class="media-preview empty" data-role="media-preview">
+<ul data-role="media-legacy-list"></ul>
+<ul data-role="media-rich-list"></ul>
+<div class="media-expanded empty" data-role="media-preview-expanded">
+
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-role="media-preview-expanded-image">
+</div>
+</div>
+
+<div class="edit-alert" role="postbox-alert"></div>
+<div class="post-actions">
+<ul class="wysiwyg">
+
+<li>
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" tabindex="-1" data-action="attach" class="attach" title="Upload Images"><span>Attach</span></a>
+<input type="file" data-role="media-upload" tabindex="-1" class="regular" accept="image/*">
+</li>
+
+
+</ul>
+
+
+</div>
+</div>
+
+
+<div data-role="login-form"><div>
+
+<section class="auth-section logged-out">
+<div class="connect">
+<h6>Sign in with</h6>
+
+<ul data-role="login-menu" class="services login-buttons">
+
+
+
+<li class="auth-disqus">
+<button type="button" data-action="auth:disqus" title="Disqus"><i class="icon-disqus"></i></button>
+</li>
+<li class="auth-facebook">
+<button type="button" data-action="auth:facebook" title="Facebook"><i class="icon-facebook-circle"></i></button>
+</li>
+<li class="auth-twitter">
+<button type="button" data-action="auth:twitter" title="Twitter"><i class="icon-twitter-circle"></i></button>
+</li>
+<li class="auth-google">
+<button type="button" data-action="auth:google" title="Google"><i class="icon-google-plus-circle"></i></button>
+</li>
+<li class="auth-signup">
+<button type="button" data-action="auth:disqus" title="Disqus">Sign up for Disqus</button>
+</li>
+</ul>
+
+</div>
+
+<div class="guest">
+<h6 class="guest-form-title">
+
+or register with Disqus
+
+</h6>
+
+<div class="what-is-disqus help-icon">
+<div id="rules" class="tooltip show">
+<h3>Disqus is a conversation network</h3>
+<ul>
+<li><span>Disqus never moderates or censors. The rules on this community are its own.</span></li>
+<li><span>Your email is safe with us. It's only used for moderation and optional notifications.</span></li>
+<li><span>Don't be a jerk or do anything illegal. Everything is easier that way.</span></li>
+</ul>
+<p class="clearfix"><a href="http://docs.disqus.com/kb/terms-and-policies/" class="btn btn-small" target="_blank">Read full terms and conditions</a></p>
+</div>
+</div>
+
+<p class="input-wrapper">
+<input dir="auto" type="text" placeholder="Name" name="display_name" maxlength="30">
+</p>
+
+<div class="guest-details " data-role="guest-details">
+<p class="input-wrapper">
+<input dir="auto" type="email" placeholder="Email" name="email">
+</p>
+
+<p class="input-wrapper">
+<input dir="auto" type="password" placeholder="Password" name="password">
+</p>
+
+<input type="checkbox" name="author-guest" style="display:none">
+
+
+</div>
+</div>
+<div class="proceed">
+
+<button type="submit" class="btn submit" aria-label="Next"><span class="icon-proceed"></span></button>
+
+</div>
+
+</section>
+
+
+
+
+</div></div>
+
+</div>
+</form></div>
+
+<button class="alert realtime" style="display: none;" data-role="realtime-notification">
+
+</button>
+
+
+<div id="no-posts" style="display: none;">Be the first to comment.</div>
+
+<ul id="post-list" class="post-list"><li class="post" id="post-1531673398">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/GuyHarwood/" class="user" data-action="profile" data-user="19980435">
+<img data-role="user-avatar" data-user="19980435" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="profile" data-user="19980435" data-role="username">GuyHarwood</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1531673398" data-role="relative-time" class="time-ago" title="Thursday, August 7, 2014 3:21 PM">
+7 days ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>legend. cheers</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1531673398">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1531673398">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1528459210">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/disqus_IyFTqJyqls/" class="user" data-action="profile" data-user="117076263">
+<img data-role="user-avatar" data-user="117076263" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="profile" data-user="117076263" data-role="username">kevin</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1528459210" data-role="relative-time" class="time-ago" title="Tuesday, August 5, 2014 4:43 PM">
+9 days ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>thanks a ton man. goood stuff</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1528459210">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1528459210">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1470867696">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/narankhuuboldbaatar/" class="user" data-action="profile" data-user="103431452">
+<img data-role="user-avatar" data-user="103431452" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="profile" data-user="103431452" data-role="username">Narankhuu Boldbaatar</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1470867696" data-role="relative-time" class="time-ago" title="Sunday, July 6, 2014 6:56 PM">
+a month ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Well, it did help me :)</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1470867696">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1470867696">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1454627078">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/coolaj86/" class="user" data-action="profile" data-user="1314240">
+<img data-role="user-avatar" data-user="1314240" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="profile" data-user="1314240" data-role="username">AJ ONeal</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1454627078" data-role="relative-time" class="time-ago" title="Thursday, June 26, 2014 2:49 AM">
+2 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Instead of removing the built-in CAs, you can supplant them with your self-signed cert as described here:</p><p><a href="https://github.com/coolaj86/node-ssl-root-cas" rel="nofollow">https://github.com/coolaj86/no...</a></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1454627078">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1454627078">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-1168472511">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/disqus_TpdHCpR6Jo/" class="user" data-action="profile" data-user="86731644">
+<img data-role="user-avatar" data-user="86731644" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="profile" data-user="86731644" data-role="username">Adriano</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1168472511" data-role="relative-time" class="time-ago" title="Wednesday, December 18, 2013 9:01 AM">
+8 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Who is app in</p><p>https.createServer(sslOptions,app)???</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1168472511">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1168472511">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-1171847193">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/jasonjaeger/" class="user" data-action="profile" data-user="26953915">
+<img data-role="user-avatar" data-user="26953915" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="profile" data-user="26953915" data-role="username">jasonjaeger</a></span>
+
+
+<span class="badge moderator">Mod</span>
+
+
+
+
+
+<span><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1168472511" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Adriano</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1171847193" data-role="relative-time" class="time-ago" title="Friday, December 20, 2013 7:49 PM">
+8 months ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Since I was using express, app would have been created something like this:</p><p>var express = require('express');<br>var app = express();</p><p><a href="http://expressjs.com/guide.html" rel="nofollow">http://expressjs.com/guide.htm...</a> has more info on setting up an express project.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#comment-1171847193">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:1171847193">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li></ul>
+
+<div class="load-more" data-role="more" style="display: none;">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="more-posts" class="btn">Load more comments</a>
+</div>
+</div>
+
+</section>
+
+<section id="community" data-tracking-area="main" style="display:none" data-role="main" data-outbound-link="embed:community">
+
+</section>
+
+<section id="dashboard" style="display:none" data-role="main" data-tracking-area="main">
+
+
+<p style="line-height: 1.4">Nothing for you here ... yet. But as you comment with Disqus and follow
+other Disqus users, you will start to receive notifications here, as well as a personalized
+feed of activity by you and the people you follow. So get out there and participate in
+some discussions!</p>
+</section>
+
+<section id="profile" style="display:none" data-role="main" data-tracking-area="main">
+</section>
+
+<div id="discovery" data-tracking-area="discovery-south"></div>
+
+<div id="footer" data-tracking-area="footer">
+<ul>
+<li class="logo"><a href="http://disqus.com/" title="Powered by Disqus">Powered by Disqus</a></li>
+<li id="thread-subscribe-button" class="email"> 
+<div class="default">
+<a href="http://greengeckodesign.com/blog/2013/06/15/creating-an-ssl-certificate-for-node-dot-js/#" data-action="subscribe" title="Subscribe and get email updates from this discussion"><i aria-hidden="true" class="icon-mail"></i><span class="clip">Subscribe</span> <i aria-hidden="true" class="icon-checkmark"></i></a>
+</div>
+<div class="form">
+<div class="input-wrapper"><input id="thread-subscribe-email" type="email" placeholder="yourname@email.com"></div>
+</div>
+</li>
+<li class="install">
+<a href="https://disqus.com/websites/?utm_source=greengeckodesign&utm_medium=Disqus-Footer" target="_blank">
+<i aria-hidden="true" class="icon-disqus"></i>
+<span class="clip">Add Disqus to your site</span>
+</a>
+</li>
+</ul>
+</div>
+</div></body></html>
