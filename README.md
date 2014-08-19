@@ -65,6 +65,15 @@ Open index.html from:
 ./unit-tests/coverage/[your browser and OS name]/index.html
 ```
 
+## Run from source:
+
+```
+node ./server.js
+```
+
+Browse to localhost on the port that is being listened to.
+
+
 ## Facebook login
 
 OAuth from the [https://developers.facebook.com/docs/facebook-login/login-flow-for-web/v2.1](Facebook login is documented) on the official Facebook developer website. The [https://developers.facebook.com/docs/plugins/login-button](login button is documented) on the same site.
@@ -79,3 +88,13 @@ This is a product being built by the Assembly community. You can help push this 
 Assembly products are like open-source and made with contributions from the community. Assembly handles the boring stuff like hosting, support, financing, legal, etc. Once the product launches we collect the revenue and split the profits amongst the contributors.
 
 Visit [https://assembly.com](https://assembly.com) to learn more.
+
+## Run from source once everything has been installed
+
+Each command in a separate terminal since they watch for changes (grunt and karma) or just run continuously (node):
+
+```
+grunt
+./node_modules/karma/bin/karma start unit-tests/karma.conf.js
+node ./server.js
+```
