@@ -20,3 +20,6 @@ src/css/screen.css
 
 # Distribution package
 dist
+
+# Documentation
+docs/~*

@@ -2,7 +2,8 @@
     'use strict';
 
     // Load dependencies.
-    var fs = require('fs'),
+    var graph = require('fbgraph'),
+        fs = require('fs'),
         https = require('https'),
         express = require('express'),
         compression = require('compression'),

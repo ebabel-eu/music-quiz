@@ -1,0 +1,20 @@
+.logo {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin-bottom: em(20, 14);
+
+    h1 {
+        @include clearfix;
+        text-align: center;
+        margin: .5em 0 .625em;
+        font-size: 4em;
+        font-weight: 300;
+
+        a,
+        a:hover,
+        a:active,
+        a:visited {
+            text-decoration: none;
+        }
+    }
+}

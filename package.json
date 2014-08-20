@@ -6,7 +6,9 @@
   "dependencies": {
     "body-parser": "1.6.3",
     "compression": "1.0.10",
-    "express": "4.4.5"
+    "express": "4.4.5",
+    "fb": "0.7.0",
+    "fbgraph": "0.2.11"
   },
   "devDependencies": {
     "grunt": "0.4.5",

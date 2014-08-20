@@ -17,31 +17,60 @@
         <script src="js/dependencies.concat.js"></script>
     </head>
     <body ng-app="musicQuizApp">
+
+        <div class="logo">
+            <div class="container">
+                <h1><a href="/"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a></h1>
+            </div>
+        </div>
+
         <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                    </ul>
+        <div ng-controller="mainController as main">
+
+            <div ng-view></div>
+
+            <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Music Quiz</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li ng-class="{active: $location.$$path == '/gamer'}" class="dropdown">
+                                <a href="#gamer" class="dropdown-toggle" data-toggle="dropdown">
+                                    {{nav.greeting}} {{nav.name}} <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#logout">Not {{nav.name}}? Logout</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#gamer/created-quizzes">Quizzes you created</a></li>
+                                    <li><a href="#gamer/played-quizzes">Quizzes you played</a></li>
+                                </ul>
+                            </li>
+                            <li ng-class="{active: $location.$$path == '/quiz-coins'}"><a href="#quic-coins">Quiz coins: {{quizCoinBalance}}</a></li>
+                            <li ng-class="{active: $location.$$path == '/home'}"><a href="#home">Play all quizzes</a></li>
+                            <li ng-class="{active: $location.$$path == '/create-new-quiz'}"><a href="#create-new-quiz">Create a new quiz</a></li>
+                            <li ng-class="{active: $location.$$path == '/about-us'}" class="dropdown">
+                                <a href="#about-us" class="dropdown-toggle" data-toggle="dropdown">
+                                    About us <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#privacy-policy">Privacy policy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div ng-controller="mainController as main">
-            <div ng-view></div>
         </div>
 
         <script src="js/app.concat.js"></script>
