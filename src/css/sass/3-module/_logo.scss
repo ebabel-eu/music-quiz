@@ -1,7 +1,7 @@
 .logo {
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    margin-bottom: em(20, 14);
+    margin-bottom: em($default-vertical-space, 14);
 
     h1 {
         @include clearfix;

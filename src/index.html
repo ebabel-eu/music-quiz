@@ -20,7 +20,7 @@
 
         <div class="logo">
             <div class="container">
-                <h1><a href="/"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a></h1>
+                <h1><a href="#home"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a></h1>
             </div>
         </div>
 
@@ -30,12 +30,69 @@
 
         <div ng-controller="mainController as main">
 
-            <div ng-view></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
+                        <div ng-view></div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+
+                        <div class="panel" 
+                                ng-class="{
+                                    'panel-success': quizCoins.balance >= quizCoins.danger,
+                                    'panel-danger': quizCoins.balance < quizCoins.danger
+                                }">
+                            <div class="panel-heading">
+                                <span class="glyphicon"
+                                        ng-class="{
+                                            'glyphicon-thumbs-up': quizCoins.balance >= quizCoins.danger,
+                                            'glyphicon-thumbs-down': quizCoins.balance < quizCoins.danger
+                                        }"></span>
+                                Your winnings
+                            </div>
+                            <div class="panel-body">
+                                <a href="#quiz-coins-account" class="label" 
+                                        ng-class="{
+                                            'label-success': quizCoins.balance >= quizCoins.danger, 
+                                            'label-danger': quizCoins.balance < quizCoins.danger
+                                        }">{{quizCoins.balance | number:0}} Quiz Coins</a>
+                            </div>
+                        </div>
+
+                        <div class="panel"
+                                ng-class="{
+                                    'panel-success': notification.level == 'success',
+                                    'panel-info': notification.level == 'info',
+                                    'panel-warning': notification.level == 'warning',
+                                    'panel-danger': notification.level == 'danger',
+                                    'panel-default': notification.level == 'default'
+                                }">
+                            <div class="panel-heading">
+                                <span class="glyphicon glyphicon-fire"></span>
+                                Notifications
+                            </div>
+                            <div class="panel-body">
+                                {{notification.message}}
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <span class="glyphicon glyphicon-globe"></span>
+                                Ads
+                            </div>
+                            <div class="panel-body">
+                                advertising space
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">Music Quiz</a>
+                        <a href="#home" class="navbar-brand"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
@@ -56,12 +113,11 @@
                                     <li><a href="#gamer/played-quizzes">Quizzes you played</a></li>
                                 </ul>
                             </li>
-                            <li ng-class="{active: $location.$$path == '/quiz-coins'}"><a href="#quic-coins">Quiz coins: {{quizCoinBalance}}</a></li>
-                            <li ng-class="{active: $location.$$path == '/home'}"><a href="#home">Play all quizzes</a></li>
-                            <li ng-class="{active: $location.$$path == '/create-new-quiz'}"><a href="#create-new-quiz">Create a new quiz</a></li>
-                            <li ng-class="{active: $location.$$path == '/about-us'}" class="dropdown">
-                                <a href="#about-us" class="dropdown-toggle" data-toggle="dropdown">
-                                    About us <span class="caret"></span>
+                            <li ng-class="{active: $location.$$path == '/home'}"><a href="#home">Play</a></li>
+                            <li ng-class="{active: $location.$$path == '/create-new-quiz'}"><a href="#create-new-quiz">Create</a></li>
+                            <li ng-class="{active: $location.$$path == '/about-music-quiz'}" class="dropdown">
+                                <a href="#about-music-quiz" class="dropdown-toggle" data-toggle="dropdown">
+                                    About Music Quiz <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#privacy-policy">Privacy policy</a></li>
