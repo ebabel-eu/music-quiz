@@ -12,7 +12,7 @@ musicQuizApp.controller('mainController', ['$scope', '$location',
 
         $scope.quizCoins = {
             // How many Quiz Coins the current gamer holds.
-            balance: 5,
+            balance: -6,
 
             // At what level does the system think the current game has too few Quiz Coins.
             danger: 3
