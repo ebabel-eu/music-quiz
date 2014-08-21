@@ -60,20 +60,30 @@
                             </div>
                         </div>
 
-                        <div class="panel"
-                                ng-class="{
-                                    'panel-success': notification.level == 'success',
-                                    'panel-info': notification.level == 'info',
-                                    'panel-warning': notification.level == 'warning',
-                                    'panel-danger': notification.level == 'danger',
-                                    'panel-default': notification.level == 'default'
-                                }">
-                            <div class="panel-heading">
-                                <span class="glyphicon glyphicon-fire"></span>
-                                Notifications
-                            </div>
-                            <div class="panel-body">
-                                {{notification.message}}
+                        <div class="notifications" ng-show="notifications.collection.length > 0">
+                            <div ng-repeat="notification in notifications.collection" 
+                                    class="alert alert-dismissible" role="alert"
+                                    ng-class="{
+                                        'alert-info': notification.type == 'info',
+                                        'alert-danger': notification.type == 'danger',
+                                        'alert-warning': notification.type == 'warning',
+                                        'alert-success': notification.type == 'success'
+                                    }">
+                                <span class="close" data-dismiss="alert"
+                                        ng-click="notifications.remove($index)">
+                                    <span aria-hidden="true" class="glyphicon glyphicon-remove"></span><span class="sr-only">Close</span>
+                                </span>
+                                <p>
+                                    <span class="glyphicon" 
+                                            ng-class="{
+                                                'glyphicon-info-sign': notification.type == 'info',
+                                                'glyphicon-ban-circle': notification.type == 'danger',
+                                                'glyphicon-warning-sign': notification.type == 'warning',
+                                                'glyphicon-check': notification.type == 'success'
+                                            }"></span> 
+                                    <strong>{{notification.title}}</strong>
+                                </p>
+                                <p>{{notification.message}}</p>
                             </div>
                         </div>
 
@@ -109,6 +119,7 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#logout">Not {{nav.name}}? Logout</a></li>
+                                    <li><a href="#login">Login</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#gamer/created-quizzes">Quizzes you created</a></li>
                                     <li><a href="#gamer/played-quizzes">Quizzes you played</a></li>

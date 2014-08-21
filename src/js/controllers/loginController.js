@@ -2,6 +2,12 @@ musicQuizApp.controller('loginController', ['$scope',
     function ($scope, $location) {
         'use strict';
 
+        $scope.notifications.collection.push({
+            "type": "warning",
+            "title": "Login doesn't fully work",
+            "message": "We are currently experiencing issues with your login. Please bear with us."
+        });
+
 
         // This is called with the results from from FB.getLoginStatus().
         $scope.statusChangeCallback = function (response) {

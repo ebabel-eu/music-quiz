@@ -1,0 +1,14 @@
+.notifications {
+    .glyphicon {
+        font-size: em(18, 14);
+        vertical-align: top;
+    }
+
+    .close {
+        font-size: em(15, 14);
+
+        .glyphicon {
+            font-size: 1em;
+        }
+    }
+}

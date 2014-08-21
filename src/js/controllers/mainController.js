@@ -1,9 +1,10 @@
-musicQuizApp.controller('mainController', ['$scope', '$location', 
+musicQuizApp.controller('mainController', ['$scope', '$location', 'notificationsService', 
 
-    function ($scope, $location) {
+    function ($scope, $location, notificationsService) {
         'use strict';
 
         $scope.$location = $location;
+        $scope.notifications = notificationsService;
 
         $scope.nav = {
             greeting: 'Hello',
@@ -18,10 +19,6 @@ musicQuizApp.controller('mainController', ['$scope', '$location',
             danger: 3
         };
 
-        $scope.notification = {
-            level: ($scope.quizCoins.balance < $scope.quizCoins.danger) ? 'danger' : 'success',
-            message: 'Your Quiz Coins balance is a bit low.'
-        };
     }
 
 ]);
