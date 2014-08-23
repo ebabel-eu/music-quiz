@@ -4,6 +4,12 @@ musicQuizApp.service('loginService', [
     function (notificationsService) {
         'use strict';
 
+        this.triggerLogin = function () {
+            FB.login(function(response) {
+               // handle the response
+            }, {scope: 'public_profile,email'});
+        }
+
         // This is called with the results from from FB.getLoginStatus().
         this.statusChangeCallback = function (response) {
             console.log(response);

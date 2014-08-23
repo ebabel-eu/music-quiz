@@ -36,6 +36,8 @@ musicQuizApp.controller('mainController', ['$scope', '$location', 'notifications
             // These three cases are handled in the callback function.
 
             FB.getLoginStatus(function (response) {
+                var redirectToLogin;
+
                 $scope.login.statusChangeCallback(response);
 
                 if (response.status === 'connected') {
@@ -43,26 +45,29 @@ musicQuizApp.controller('mainController', ['$scope', '$location', 'notifications
                     $scope.notifications.add({
                         "type": "success",
                         "title": "You are logged in",
-                        "message": "You can now play and win Music Coins."
+                        "message": "You can play Music Quiz and win Quiz Coins."
                     });
-
-                    // Test
-                    this.getGamerDetails();
-                    this.getFriendsWhoPlay();
+                    redirectToLogin = false;
                 } else if (response.status === 'not_authorized') {
                     // The person is logged into Facebook, but not your app.
                     $scope.notifications.add({
                         "type": "info",
                         "title": "Authorize this game",
-                        "message": "To play quizzes and win Music Coins, you first need to accept to play this game with your Facebook account."
+                        "message": "To play Music Quiz and win Music Coins, you first need to accept to play this game with your Facebook account."
                     });
+                    redirectToLogin = true;
                 } else {
                     // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
                     $scope.notifications.add({
-                        "type": "info",
+                        "type": "warning",
                         "title": "Log into Facebook please",
-                        "message": "To play and win Music Coins, you first need to log into your Facebook account."
+                        "message": "To play Music Quiz and win Music Coins, you first need to log into your Facebook account."
                     });
+                    redirectToLogin = true;
+                }
+
+                if (redirectToLogin) {
+                    $scope.$apply(function() { $location.path("/login"); });
                 }
 
                 // Update the scope to make sure notifications are displayed.
