@@ -3,7 +3,6 @@
 
     // Load dependencies.
     var config = require('./config.js'),
-        graph = require('fbgraph'),
         fs = require('fs'),
         https = require('https'),
         express = require('express'),
@@ -17,18 +16,19 @@
             rejectUnauthorized: false
         },
         app = express(),
-        server;
+        server,
+        authUrl;
 
     // Add SSL.
     https.createServer({key:options.key, cert:options.cert}, app);
 
-    // Parse application/x-www-form-urlencoded
+    // Parse application/x-www-form-urlencoded.
     app.use(bodyParser.urlencoded({ extended: false }))
 
-    // Parse application/json
+    // Parse application/json.
     app.use(bodyParser.json())
 
-    // Parse application/vnd.api+json as json
+    // Parse application/vnd.api+json as json.
     app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
     // Simple logger.
@@ -52,11 +52,6 @@
     // Intercept POST request and switch it to a GET one.
     app.post('/', function (req, res, next) {
         req.method = 'GET';
-        next();
-    });
-
-    app.get('/', function (req, res, next){
-        res.render("index", { title: "click link to connect" });
         next();
     });
 

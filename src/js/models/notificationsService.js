@@ -1,4 +1,5 @@
 // Handle messages sent to the gamer.
+// todo: Handle duplicate notifications. Like in browser F12 alert messages, show how many times the same notification is pushed.
 musicQuizApp.service('notificationsService', function () {
     'use strict';
 

@@ -21,7 +21,7 @@
         
         <div class="logo">
             <div class="container">
-                <h1><a href="#home"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a></h1>
+                <h1><a href="/#home"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a></h1>
             </div>
         </div>
 
@@ -52,7 +52,7 @@
                                 Your Quiz Coins
                             </div>
                             <div class="panel-body">
-                                <a href="#quiz-coins-account" class="label" 
+                                <a href="/#quiz-coins-account" class="label" 
                                         ng-class="{
                                             'label-success': quizCoins.balance >= quizCoins.danger, 
                                             'label-danger': quizCoins.balance < quizCoins.danger
@@ -103,7 +103,7 @@
             <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
-                        <a href="#home" class="navbar-brand"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a>
+                        <a href="/#home" class="navbar-brand"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
@@ -114,25 +114,25 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li ng-class="{active: $location.$$path == '/gamer'}" class="dropdown">
-                                <a href="#gamer" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="/#gamer" class="dropdown-toggle" data-toggle="dropdown">
                                     {{nav.greeting}} {{nav.name}} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#logout">Not {{nav.name}}? Logout</a></li>
-                                    <li><a href="#login">Login</a></li>
+                                    <li><a href="/#logout">Not {{nav.name}}? Logout</a></li>
+                                    <li><a href="/#login">Login</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#gamer/created-quizzes">Quizzes you created</a></li>
-                                    <li><a href="#gamer/played-quizzes">Quizzes you played</a></li>
+                                    <li><a href="/#gamer/created-quizzes">Quizzes you created</a></li>
+                                    <li><a href="/#gamer/played-quizzes">Quizzes you played</a></li>
                                 </ul>
                             </li>
-                            <li ng-class="{active: $location.$$path == '/home'}"><a href="#home">Play</a></li>
-                            <li ng-class="{active: $location.$$path == '/create-new-quiz'}"><a href="#create-new-quiz">Create</a></li>
+                            <li ng-class="{active: $location.$$path == '/home'}"><a href="/#home">Play</a></li>
+                            <li ng-class="{active: $location.$$path == '/create-new-quiz'}"><a href="/#create-new-quiz">Create</a></li>
                             <li ng-class="{active: $location.$$path == '/about-music-quiz'}" class="dropdown">
-                                <a href="#about-music-quiz" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="/#about-music-quiz" class="dropdown-toggle" data-toggle="dropdown">
                                     About Music Quiz <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#privacy-policy">Privacy policy</a></li>
+                                    <li><a href="/#privacy-policy">Privacy policy</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -143,14 +143,15 @@
 
         <script src="js/app.concat.js"></script>
 
-        <!-- Google Analytics -->
         <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+            // Load the Facebook SDK asynchronously
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
         </script>
     </body>
 </html>
