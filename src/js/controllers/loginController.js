@@ -2,7 +2,7 @@ musicQuizApp.controller('loginController', ['$scope',
     function ($scope, $location) {
         'use strict';
 
-        $scope.notifications.collection.push({
+        $scope.notifications.add({
             "type": "warning",
             "title": "Login doesn't fully work",
             "message": "We are currently experiencing issues with your login. Please bear with us."
