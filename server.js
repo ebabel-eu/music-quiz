@@ -2,15 +2,13 @@
     'use strict';
 
     // Load dependencies.
-    var graph = require('fbgraph'),
+    var config = require('./config.js'),
+        graph = require('fbgraph'),
         fs = require('fs'),
         https = require('https'),
         express = require('express'),
         compression = require('compression'),
         bodyParser = require('body-parser'),
-        tenYears = 86400000 * 365.2425 * 10,
-        ip = '127.0.0.1',
-        port = 3030,
         options = {
             key: fs.readFileSync('./ssl/server.key'),
             cert: fs.readFileSync('./ssl/server.crt'),
@@ -23,9 +21,6 @@
 
     // Add SSL.
     https.createServer({key:options.key, cert:options.cert}, app);
-
-    // Gzip compression.
-    app.use(compression());
 
     // Parse application/x-www-form-urlencoded
     app.use(bodyParser.urlencoded({ extended: false }))
@@ -48,25 +43,30 @@
             'X-Powered-By': 'AngularJS',
             'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',               // Allowed request http verbs.
             'Access-Control-Allow-Headers': 'X-Requested-With,content-type',    // Allowed request headers.
-            'Cache-Control': 'public, max-age=' + tenYears,
-            'Expires': new Date(Date.now() + tenYears).toUTCString()
+            'Cache-Control': 'public, max-age=' + config.expiryDate,
+            'Expires': new Date(Date.now() + config.expiryDate).toUTCString()
         });
         next();
     });
 
     // Intercept POST request and switch it to a GET one.
-    app.post("/", function (req, res, next) {
-        req.method = "GET";
+    app.post('/', function (req, res, next) {
+        req.method = 'GET';
+        next();
+    });
+
+    app.get('/', function (req, res, next){
+        res.render("index", { title: "click link to connect" });
         next();
     });
 
     // Handle all static file GET requests.
-    app.use(express.static(__dirname + '/src'), {
-        maxAge: tenYears
+    app.use(express.static(__dirname + config.publicDirectory), {
+        maxAge: config.expiryDate
     });
 
     // Start listening on a port.
-    server = https.createServer(options, app).listen(port, function() {
-        console.log("Secure Express server listening on port " + port);
+    server = https.createServer(options, app).listen(config.port, function() {
+        console.log("Secure Express server listening on port " + config.port);
     });
 }());

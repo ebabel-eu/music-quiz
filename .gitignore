@@ -10,6 +10,7 @@ coverage
 # Server side
 node_modules
 ssl
+config.js
 
 # Client side
 bower_components
