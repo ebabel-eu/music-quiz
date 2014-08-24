@@ -6,6 +6,7 @@ musicQuizApp
                 .when('/', {controller: 'mainController', templateUrl: 'views/home.html'})
                 .when('/home', {controller: 'mainController', templateUrl: 'views/home.html'})
                 .when('/login', {controller: 'loginController', templateUrl: 'views/login.html'})
+                .when('/logout', {controller: 'loginController', templateUrl: 'views/logout.html'})
                 .when('/404', {templateUrl: 'views/404.html'})
                 .otherwise({redirectTo: '/404'});
         }])

@@ -8,8 +8,7 @@ musicQuizApp.controller('mainController', ['$scope', '$location', 'notifications
         $scope.login = loginService;
 
         $scope.nav = {
-            greeting: 'Hello',
-            name: 'Nadjib'
+            greeting: 'Hello'
         };
 
         $scope.quizCoins = {
@@ -20,6 +19,7 @@ musicQuizApp.controller('mainController', ['$scope', '$location', 'notifications
             danger: 3
         };
 
+        // todo: improve the coupling of the code below. There is too much coupling and all this code doesn't below in a controller.
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '319427958231932', // Current environment - todo: read from a config file that is accessible here.
@@ -28,13 +28,10 @@ musicQuizApp.controller('mainController', ['$scope', '$location', 'notifications
                 version    : 'v2.1' // use version 2.1
             });
 
-            // Now that we've initialized the JavaScript SDK, we call FB.getLoginStatus().  This function gets the state of the
-            // person visiting this page and can return one of three states to the callback you provide.  They can be:
-            // 1. Logged into your app ('connected')
-            // 2. Logged into Facebook, but not your app ('not_authorized')
-            // 3. Not logged into Facebook and can't tell if they are logged into your app or not.
-            // These three cases are handled in the callback function.
-
+            // Get the state of the gamer visiting this page and return:
+            //      1. Logged into your app ('connected')
+            //      2. Logged into Facebook, but not your app ('not_authorized')
+            //      3. Not logged into Facebook and can't tell if they are logged into your app or not.
             FB.getLoginStatus(function (response) {
                 var redirectToLogin;
 
@@ -42,27 +39,15 @@ musicQuizApp.controller('mainController', ['$scope', '$location', 'notifications
 
                 if (response.status === 'connected') {
                     // Logged into your app and Facebook.
-                    $scope.notifications.add({
-                        "type": "success",
-                        "title": "You are logged in",
-                        "message": "You can play Music Quiz and win Quiz Coins."
-                    });
+                    $scope.notifications.add($scope.login.notifications.success);
                     redirectToLogin = false;
                 } else if (response.status === 'not_authorized') {
                     // The person is logged into Facebook, but not your app.
-                    $scope.notifications.add({
-                        "type": "info",
-                        "title": "Authorize this game",
-                        "message": "To play Music Quiz and win Music Coins, you first need to accept to play this game with your Facebook account."
-                    });
+                    $scope.notifications.add($scope.login.notifications.authorizationRequired);
                     redirectToLogin = true;
                 } else {
                     // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
-                    $scope.notifications.add({
-                        "type": "warning",
-                        "title": "Log into Facebook please",
-                        "message": "To play Music Quiz and win Music Coins, you first need to log into your Facebook account."
-                    });
+                    $scope.notifications.add($scope.login.notifications.loginRequired);
                     redirectToLogin = true;
                 }
 

@@ -113,22 +113,22 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li ng-class="{active: $location.$$path == '/gamer'}" class="dropdown">
-                                <a href="/#gamer" class="dropdown-toggle" data-toggle="dropdown">
-                                    {{nav.greeting}} {{nav.name}} <span class="caret"></span>
+                            <li ng-class="{active: ($location.$$path == '/login' || $location.$$path == '/logout')}" class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">
+                                    {{nav.greeting}} {{login.name}} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/#logout">Not {{nav.name}}? Logout</a></li>
+                                    <li><a href="/#logout" ng-click="login.logout()">Not {{login.name}}? Logout</a></li>
                                     <li><a href="/#login">Login</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="/#gamer/created-quizzes">Quizzes you created</a></li>
-                                    <li><a href="/#gamer/played-quizzes">Quizzes you played</a></li>
+                                    <li><a href="#">Quizzes you created</a></li>
+                                    <li><a href="#">Quizzes you played</a></li>
                                 </ul>
                             </li>
                             <li ng-class="{active: $location.$$path == '/home'}"><a href="/#home">Play</a></li>
                             <li ng-class="{active: $location.$$path == '/create-new-quiz'}"><a href="/#create-new-quiz">Create</a></li>
-                            <li ng-class="{active: $location.$$path == '/about-music-quiz'}" class="dropdown">
-                                <a href="/#about-music-quiz" class="dropdown-toggle" data-toggle="dropdown">
+                            <li ng-class="{active: $location.$$path == '/privacy-policy'}" class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">
                                     About Music Quiz <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
