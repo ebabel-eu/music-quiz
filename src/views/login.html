@@ -1,9 +1,1 @@
-<div class="form-group" ng-show="FB.getAuthResponse() == null">
-    <button class="btn btn-primary btn-lg" ng-click="FB.login()">Connect with Facebook</button>
-</div>
-
-<div class="form-group" ng-show="FB.getAuthResponse()">
-    <h4>Access Token:</h4>
-    <p ng-bind="FB.getAuthResponse().accessToken"></p>
-    <button class='btn btn-small' ng-click="FB.logout()">Logout</button>
-</div>
+<p>You are logged in.</p>

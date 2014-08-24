@@ -115,11 +115,11 @@
                         <ul class="nav navbar-nav">
                             <li ng-class="{active: ($location.$$path == '/login' || $location.$$path == '/logout')}" class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown">
-                                    {{nav.greeting}} {{login.name}} <span class="caret"></span>
+                                    {{nav.greeting}} {{login.gamer.first_name || login.gamer.name}} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/#logout" ng-click="login.logout()">Not {{login.name}}? Logout</a></li>
-                                    <li><a href="/#login">Login</a></li>
+                                    <li><a href="/#logout" ng-click="login.logout()" ng-show="login.showLogout">Not {{login.gamer.first_name || login.gamer.name}}? Logout</a></li>
+                                    <li><a href="/#login" ng-click="login.triggerLogin()" ng-show="login.showLogin">Login</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">Quizzes you created</a></li>
                                     <li><a href="#">Quizzes you played</a></li>

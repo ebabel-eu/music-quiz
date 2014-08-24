@@ -5,21 +5,23 @@ musicQuizApp.service('loginService', [
         'use strict';
 
         var getGamerDetails,
-            getFriendsWhoPlay;
+            getFriendsWhoPlay,
+            that = this;
 
         this.gamer = {};
         this.friends = {};
+        this.showLogin = false;
+        this.showLogout = false;
 
         // Get current gamer details.
         getGamerDetails = function() {
-            FB.api("/v2.1/me?fields=name,first_name,last_name,email,picture,link,gender,locale,age_range", function(response) { 
+            FB.api("/v2.1/me?fields=name,first_name,last_name,email,picture,link,gender,locale,age_range", function (response) { 
                     if (response && !response.error) {
-                        this.gamer = response;
-                        console.log(this.gamer);
+                        that.gamer = response;
                     }
 
                     if (response && response.error) {
-                        // todo: what's the best way to handle this error?
+                        // todo: what's the best way to handle this error? A notification?
                         console.log(response.error);
                     }
                 }
@@ -58,10 +60,13 @@ musicQuizApp.service('loginService', [
                 // Logged into your app and Facebook.
                 getGamerDetails();
                 getFriendsWhoPlay();
+                this.showLogout = true;
             } else if (response.status === 'not_authorized') {
                 // The person is logged into Facebook, but not your app.
+                this.showLogin = true;
             } else {
                 // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
+                this.showLogin = true;
             }
         }
 
