@@ -3,4 +3,8 @@
     @include respond-to(lg) {
         height: em(50, 14);
     }
+
+    .dropdown-toggle:hover {
+        cursor: pointer;
+    }
 }
