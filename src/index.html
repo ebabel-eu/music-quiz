@@ -113,7 +113,9 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li ng-class="{active: ($location.$$path == '/login' || $location.$$path == '/logout')}" class="dropdown">
+                            <li ng-class="{active: ($location.$$path == '/login' || $location.$$path == '/logout')}" 
+                                    class="dropdown"
+                                    ng-model="login">
                                 <a class="dropdown-toggle" data-toggle="dropdown">
                                     {{nav.greeting}} {{login.gamer.first_name || login.gamer.name}} <span class="caret"></span>
                                 </a>

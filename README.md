@@ -18,12 +18,22 @@ bower install
 
 ### Sass
 
-Start the batch process that will watch for changes to the css styles and combine a single screen.css file from Sass:
+Start the batch process that will watch for changes to the css styles and combine a single screen.css file from Sass.
+
+Windows:
 
 ```
 open the directory ./src/css/sass/
 double click on watch.bat to open it and start its process (Windows only)
 ```
+
+Mac OS:
+
+```
+cd ./src/css/sass/
+sass --watch "screen.scss:../screen.css"
+```
+
 
 ### Grunt
 
