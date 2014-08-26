@@ -1,4 +1,7 @@
-// This configuration file is a template. Update its values and rename it from .config.js to config.js (without the initial dot).
+// This configuration file is a template. 
+// Copy it first and rename it from .config.js to config.js (without the initial dot). 
+// You can then place your secret values in the config.js without the initial dot. 
+// Never commit your secret keys to a git repository.
 module.exports = {
 
     // For which environment are these configuration settings.
