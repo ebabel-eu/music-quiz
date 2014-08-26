@@ -16,6 +16,23 @@ npm install
 bower install
 ```
 
+### config
+
+There is a template .config.js file you can copy into a config.js file.
+Store your secret keys in that config.js (without initial dot) but never commit it to a repository.
+
+
+### SSL
+
+You will need to setup SSL, either a self signed certificate or a real SSL.
+The paths to your SSL is in your config.js file.
+
+
+### Facebook and Decibel
+
+You also need to setup a Facebook App and signup to the Decibel API. Both will issue keys to store in config.js
+
+
 ### Sass
 
 Start the batch process that will watch for changes to the css styles and combine a single screen.css file from Sass.
@@ -75,10 +92,18 @@ Open index.html from:
 ./unit-tests/coverage/[your browser and OS name]/index.html
 ```
 
-## Run from source:
+## Run from source.
+
+Windows:
 
 ```
 node ./server.js
+```
+
+Mac OS X:
+
+```
+sudo node ./server.js
 ```
 
 Browse to localhost on the port that is being listened to.

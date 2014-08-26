@@ -8,19 +8,23 @@
         express = require('express'),
         compression = require('compression'),
         bodyParser = require('body-parser'),
-        options = {
-            key: fs.readFileSync('./ssl/server.key'),
-            cert: fs.readFileSync('./ssl/server.crt'),
-            ca: fs.readFileSync('./ssl/ca.crt'),
-            requestCert: true,
-            rejectUnauthorized: false
+        ssl = {
+            key: fs.readFileSync(config.ssl.key),
+            cert: fs.readFileSync(config.ssl.cert),
+            requestCert: config.ssl.requestCert,
+            rejectUnauthorized: config.ssl.rejectUnauthorized
         },
         app = express(),
         server,
         authUrl;
 
+    // Optional ssl parameter: certificate authority ca
+    if (config.ssl.ca) {
+        ssl.ca = fs.readFileSync(config.ssl.ca);
+    }
+
     // Add SSL.
-    https.createServer({key:options.key, cert:options.cert}, app);
+    https.createServer({key:ssl.key, cert:ssl.cert}, app);
 
     // Parse application/x-www-form-urlencoded.
     app.use(bodyParser.urlencoded({ extended: false }))
@@ -41,7 +45,7 @@
     app.use(function (req, res, next) {
         res.set({
             'X-Powered-By': 'AngularJS',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',               // Allowed request http verbs.
+            'Access-Control-Allow-Methods': 'GET, POST, ssl',               // Allowed request http verbs.
             'Access-Control-Allow-Headers': 'X-Requested-With,content-type',    // Allowed request headers.
             'Cache-Control': 'public, max-age=' + config.expiryDate,
             'Expires': new Date(Date.now() + config.expiryDate).toUTCString()
@@ -61,7 +65,7 @@
     });
 
     // Start listening on a port.
-    server = https.createServer(options, app).listen(config.port, function() {
+    server = https.createServer(ssl, app).listen(config.port, function() {
         console.log("Secure Express server listening on port " + config.port);
     });
 }());

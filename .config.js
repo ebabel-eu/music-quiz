@@ -32,5 +32,17 @@ module.exports = {
     decibel: {
         applicationId: 'YOUR DECIBEL API APPLICATION ID',
         applicationKey: 'YOUR DECIBEL API APPLICATION KEY'
+    },
+
+    // SSL.
+    ssl: {
+        key: 'PATH TO YOUR SSL PRIVATE KEY',
+        cert: 'PATH TO YOUR SSL CERTIFICATE',
+
+        // The certificate authority is optional. Don't specify it if you don't need it.
+        ca: 'PATH TO YOUR SSL CERTIFICATE AUTHORITY',
+
+        requestCert: true,
+        rejectUnauthorized: false
     }
 };
