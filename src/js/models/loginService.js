@@ -9,7 +9,6 @@ musicQuizApp.service('loginService', [
             that = this;
 
         this.gamer = {};
-        this.friends = {};
         this.showLogin = false;
         this.showLogout = false;
 
@@ -30,12 +29,6 @@ musicQuizApp.service('loginService', [
             );
         }
 
-        this.triggerLogin = function () {
-            FB.login(function(response) {
-               // handle the response
-            }, {scope: 'public_profile,email'});
-        }
-
         // This is called with the results from from FB.getLoginStatus().
         this.statusChangeCallback = function (response, callback, $scope) {
             // The response object is returned with a status field that lets the app know the current login status of the person.
@@ -44,23 +37,19 @@ musicQuizApp.service('loginService', [
                 // Logged into your app and Facebook.
                 this.gamer = getGamerDetails(callback, $scope);
                 this.showLogout = true;
+                this.showLogin = false;
                 return this.gamer;
             } else if (response.status === 'not_authorized') {
                 // The person is logged into Facebook, but not your app.
                 this.showLogin = true;
+                this.showLogout = false;
             } else {
                 // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
                 this.showLogin = true;
+                this.showLogout = false;
             }
 
             callback($scope);
-        }
-
-        // This function is called when someone finishes with the Login Button.  See the onlogin handler attached to it in the sample code below.
-        this.checkLoginState = function() {
-            FB.getLoginStatus(function(response) {
-                this.statusChangeCallback(response);
-            });
         }
 
         // Standard notifications related to login operations.
