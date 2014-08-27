@@ -21,7 +21,8 @@ module.exports = function (grunt) {
                         'src/js/app.js',
                         'src/js/config.js',
                         'src/js/models/*.js',
-                        'src/js/controllers/*.js'
+                        'src/js/controllers/*.js',
+                        'src/js/directives/*.js'
                     ]
                 }
             }

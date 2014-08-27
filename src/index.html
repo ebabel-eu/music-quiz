@@ -34,7 +34,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
-                        <div ng-view></div>
+                        <mq-footer></mq-footer>
+                        <ng-view></ng-view>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 
@@ -122,7 +123,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="/#logout" ng-click="login.logout()" ng-show="login.showLogout">Not {{login.gamer.first_name || login.gamer.name}}? Logout</a></li>
                                     <li><a href="/#login" ng-click="login.triggerLogin()" ng-show="login.showLogin">Login</a></li>
-                                    <li class="divider"></li>
+                                    <li class="divider" ng-show="online"></li>
                                     <li><a href="#">Quizzes you created</a></li>
                                     <li><a href="#">Quizzes you played</a></li>
                                 </ul>
@@ -146,8 +147,11 @@
         <script src="js/app.concat.js"></script>
 
         <script>
-            // Load the Facebook SDK asynchronously
             (function(d, s, id) {
+                // Do not attempt to load the Facebook SDK if there is no internet connection.
+                if (!navigator.onLine) return;
+
+                // Load the Facebook SDK asynchronously
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
                 js = d.createElement(s); js.id = id;

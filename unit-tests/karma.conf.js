@@ -12,6 +12,7 @@ module.exports = function(config) {
             'src/js/config.js',
             'src/js/models/*.js',
             'src/js/controllers/*.js',
+            'src/js/directives/*.js',
             'unit-tests/spec/**/*.js'
         ],
         exclude: [

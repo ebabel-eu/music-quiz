@@ -7,6 +7,8 @@ musicQuizApp.controller('mainController', ['$scope', '$location', 'notifications
         $scope.notifications = notificationsService;
         $scope.login = loginService;
 
+        $scope.online = navigator.onLine;
+
         $scope.nav = {
             greeting: 'Hello'
         };
@@ -21,6 +23,8 @@ musicQuizApp.controller('mainController', ['$scope', '$location', 'notifications
 
         // todo: improve the coupling of the code below. There is too much coupling and all this code doesn't below in a controller.
         window.fbAsyncInit = function() {
+            if (!$scope.online) return;
+
             FB.init({
                 appId      : '319427958231932', // Current environment - todo: read from a config file that is accessible here.
                 cookie     : true,  // enable cookies to allow the server to access the session
