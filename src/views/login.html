@@ -1,6 +1,6 @@
 <section class="col-lg-9 col-md-8 col-sm-8 col-xs-12" ng-controller="loginController">
 
-	<p ng-show="!showResult">Login in process, please wait...</p>
+	<p ng-show="showResult == false">Login in process, please wait...</p>
 
-	<p ng-show="showResult">You are logged in.</p>
+	<p ng-show="showResult == true">You are logged in. You can <a href="/#home" class="btn btn-primary btn-xs">play now</a></p>
 </section>
