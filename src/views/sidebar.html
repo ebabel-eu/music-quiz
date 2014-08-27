@@ -1,0 +1,72 @@
+<aside class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-show="showSidebar">
+
+    <p ng-show="login.showLogout">
+        {{greeting}} {{login.gamer.first_name || login.gamer.name}}.
+        Not {{login.gamer.first_name || login.gamer.name}}? 
+        <a href="/#logout" class="btn btn-default btn-xs" ng-click="login.logout()">Logout</a>
+    </p>
+
+    <p ng-show="login.showLogin" class="text-center login-button">
+        <a href="/#login" class="btn btn-primary btn-lg btn-block" ng-click="login.triggerLogin()">Login with Facebook</a>
+    </p>
+
+    <div class="panel" 
+            ng-class="{
+                'panel-success': quizCoins.balance >= quizCoins.danger,
+                'panel-danger': quizCoins.balance < quizCoins.danger
+            }">
+        <div class="panel-heading">
+            <span class="glyphicon"
+                    ng-class="{
+                        'glyphicon-thumbs-up': quizCoins.balance >= quizCoins.danger,
+                        'glyphicon-thumbs-down': quizCoins.balance < quizCoins.danger
+                    }"></span>
+            Your Quiz Coins
+        </div>
+        <div class="panel-body">
+            <a href="/#quiz-coins-account" class="label" 
+                    ng-class="{
+                        'label-success': quizCoins.balance >= quizCoins.danger, 
+                        'label-danger': quizCoins.balance < quizCoins.danger
+                    }">{{quizCoins.balance | number:0}} Quiz Coins</a>
+        </div>
+    </div>
+
+    <div class="notifications" ng-show="notifications.collection.length > 0">
+        <div ng-repeat="notification in notifications.collection" 
+                class="alert alert-dismissible" role="alert"
+                ng-class="{
+                    'alert-info': notification.type == 'info',
+                    'alert-danger': notification.type == 'danger',
+                    'alert-warning': notification.type == 'warning',
+                    'alert-success': notification.type == 'success'
+                }">
+            <span class="close" data-dismiss="alert"
+                    ng-click="notifications.remove($index)">
+                <span aria-hidden="true" class="glyphicon glyphicon-remove"></span><span class="sr-only">Close</span>
+            </span>
+            <p>
+                <span class="glyphicon" 
+                        ng-class="{
+                            'glyphicon-info-sign': notification.type == 'info',
+                            'glyphicon-ban-circle': notification.type == 'danger',
+                            'glyphicon-warning-sign': notification.type == 'warning',
+                            'glyphicon-check': notification.type == 'success'
+                        }"></span> 
+                <strong>{{notification.title}}</strong>
+            </p>
+            <p>{{notification.message}}</p>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-globe"></span>
+            Ads
+        </div>
+        <div class="panel-body">
+            advertising space
+        </div>
+    </div>
+
+</aside>

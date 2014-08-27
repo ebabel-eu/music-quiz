@@ -1,17 +1,11 @@
-musicQuizApp.controller('mainController', ['$scope', '$location', 'notificationsService', 'loginService', 
+musicQuizApp.controller('sidebarController', ['$scope', 'notificationsService', 'loginService', 
 
-    function ($scope, $location, notificationsService, loginService) {
+    function ($scope, notificationsService, loginService) {
         'use strict';
 
-        $scope.$location = $location;
+        $scope.showSidebar = false;
+
         $scope.notifications = notificationsService;
-        $scope.login = loginService;
-
-        $scope.online = navigator.onLine;
-
-        $scope.nav = {
-            greeting: 'Hello'
-        };
 
         $scope.quizCoins = {
             // How many Quiz Coins the current gamer holds.
@@ -20,6 +14,12 @@ musicQuizApp.controller('mainController', ['$scope', '$location', 'notifications
             // At what level does the system think the current game has too few Quiz Coins.
             danger: 3
         };
+
+        $scope.greeting = 'Hello';
+
+        $scope.login = loginService;
+
+        $scope.online = navigator.onLine;
 
         // todo: improve the coupling of the code below. There is too much coupling and all this code doesn't below in a controller.
         window.fbAsyncInit = function() {
@@ -37,21 +37,28 @@ musicQuizApp.controller('mainController', ['$scope', '$location', 'notifications
             //      2. Logged into Facebook, but not your app ('not_authorized')
             //      3. Not logged into Facebook and can't tell if they are logged into your app or not.
             FB.getLoginStatus(function (response) {
-                $scope.login.statusChangeCallback(response);
+            	var callback = function ($scope) {
+	                // The sidebar has now been populated.
+	                $scope.showSidebar = true;
 
+	                // Update the scope to display the sidebar.
+	                $scope.$apply();
+            	};
+
+                // Notifications to display.
                 if (response.status === 'connected') {
-                    // Logged into your app and Facebook.
+                    // The gamer is logged into the app and Facebook.
                     $scope.notifications.add($scope.login.notifications.success);
                 } else if (response.status === 'not_authorized') {
-                    // The person is logged into Facebook, but not your app.
+                    // The gamer is logged into Facebook, but not the app.
                     $scope.notifications.add($scope.login.notifications.authorizationRequired);
                 } else {
-                    // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
+                    // The gamer is not logged into Facebook, so we're not sure if he is logged into this app or not.
                     $scope.notifications.add($scope.login.notifications.loginRequired);
                 }
 
-                // Update the scope to make sure notifications are displayed.
-                $scope.$apply();
+                // Update the login service.
+                $scope.login.statusChangeCallback(response, callback, $scope);
             });
         };
     }

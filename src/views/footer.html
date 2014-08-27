@@ -1,10 +1,27 @@
-<footer>
-
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+<footer class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/#home" class="navbar-brand"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active: ($location.$$path == '/home' || $location.$$path == '/')}"><a href="/#home">Play</a></li>
+                <li ng-class="{active: $location.$$path == '/create-new-quiz'}"><a href="/#create-new-quiz">Create</a></li>
+                <li ng-class="{active: $location.$$path == '/privacy-policy'}" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        About Music Quiz <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/#privacy-policy">Privacy policy</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 </footer>

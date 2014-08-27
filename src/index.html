@@ -13,139 +13,34 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link rel="stylesheet" href="css/screen.css">
-
         <script src="js/dependencies.concat.js"></script>
     </head>
     <body ng-app="musicQuizApp">
         <div id="fb-root"></div>
         
-        <div class="logo">
+        <header class="logo">
             <div class="container">
                 <h1><a href="/#home"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a></h1>
             </div>
-        </div>
+        </header>
 
-        <!--[if lt IE 9]>
+        <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div ng-controller="mainController as main">
+        <div class="container">
+            <ng-view></ng-view>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
-                        <mq-footer></mq-footer>
-                        <ng-view></ng-view>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-
-                        <div class="panel" 
-                                ng-class="{
-                                    'panel-success': quizCoins.balance >= quizCoins.danger,
-                                    'panel-danger': quizCoins.balance < quizCoins.danger
-                                }">
-                            <div class="panel-heading">
-                                <span class="glyphicon"
-                                        ng-class="{
-                                            'glyphicon-thumbs-up': quizCoins.balance >= quizCoins.danger,
-                                            'glyphicon-thumbs-down': quizCoins.balance < quizCoins.danger
-                                        }"></span>
-                                Your Quiz Coins
-                            </div>
-                            <div class="panel-body">
-                                <a href="/#quiz-coins-account" class="label" 
-                                        ng-class="{
-                                            'label-success': quizCoins.balance >= quizCoins.danger, 
-                                            'label-danger': quizCoins.balance < quizCoins.danger
-                                        }">{{quizCoins.balance | number:0}} Quiz Coins</a>
-                            </div>
-                        </div>
-
-                        <div class="notifications" ng-show="notifications.collection.length > 0">
-                            <div ng-repeat="notification in notifications.collection" 
-                                    class="alert alert-dismissible" role="alert"
-                                    ng-class="{
-                                        'alert-info': notification.type == 'info',
-                                        'alert-danger': notification.type == 'danger',
-                                        'alert-warning': notification.type == 'warning',
-                                        'alert-success': notification.type == 'success'
-                                    }">
-                                <span class="close" data-dismiss="alert"
-                                        ng-click="notifications.remove($index)">
-                                    <span aria-hidden="true" class="glyphicon glyphicon-remove"></span><span class="sr-only">Close</span>
-                                </span>
-                                <p>
-                                    <span class="glyphicon" 
-                                            ng-class="{
-                                                'glyphicon-info-sign': notification.type == 'info',
-                                                'glyphicon-ban-circle': notification.type == 'danger',
-                                                'glyphicon-warning-sign': notification.type == 'warning',
-                                                'glyphicon-check': notification.type == 'success'
-                                            }"></span> 
-                                    <strong>{{notification.title}}</strong>
-                                </p>
-                                <p>{{notification.message}}</p>
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <span class="glyphicon glyphicon-globe"></span>
-                                Ads
-                            </div>
-                            <div class="panel-body">
-                                advertising space
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a href="/#home" class="navbar-brand"><span class="glyphicon glyphicon-headphones"></span> Music Quiz</a>
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li ng-class="{active: ($location.$$path == '/login' || $location.$$path == '/logout')}" 
-                                    class="dropdown"
-                                    ng-model="login">
-                                <a class="dropdown-toggle" data-toggle="dropdown">
-                                    {{nav.greeting}} {{login.gamer.first_name || login.gamer.name}} <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/#logout" ng-click="login.logout()" ng-show="login.showLogout">Not {{login.gamer.first_name || login.gamer.name}}? Logout</a></li>
-                                    <li><a href="/#login" ng-click="login.triggerLogin()" ng-show="login.showLogin">Login</a></li>
-                                    <li class="divider" ng-show="online"></li>
-                                    <li><a href="#">Quizzes you created</a></li>
-                                    <li><a href="#">Quizzes you played</a></li>
-                                </ul>
-                            </li>
-                            <li ng-class="{active: $location.$$path == '/home'}"><a href="/#home">Play</a></li>
-                            <li ng-class="{active: $location.$$path == '/create-new-quiz'}"><a href="/#create-new-quiz">Create</a></li>
-                            <li ng-class="{active: $location.$$path == '/privacy-policy'}" class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown">
-                                    About Music Quiz <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/#privacy-policy">Privacy policy</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div ng-controller="sidebarController">
+                <mq-sidebar></mq-sidebar>
             </div>
         </div>
 
-        <script src="js/app.concat.js"></script>
+        <div ng-controller="footerController">
+            <mq-footer></mq-footer>
+        </div>
 
+        <script src="js/app.concat.js"></script>
         <script>
             (function(d, s, id) {
                 // Do not attempt to load the Facebook SDK if there is no internet connection.

@@ -3,8 +3,8 @@ musicQuizApp
         // Set a mapping between url routes and views.
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider
-                .when('/', {controller: 'mainController', templateUrl: 'views/home.html'})
-                .when('/home', {controller: 'mainController', templateUrl: 'views/home.html'})
+                .when('/', {templateUrl: 'views/home.html'})
+                .when('/home', {templateUrl: 'views/home.html'})
                 .when('/login', {templateUrl: 'views/login.html'})
                 .when('/logout', {templateUrl: 'views/logout.html'})
                 .when('/404', {templateUrl: 'views/404.html'})
