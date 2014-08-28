@@ -39,8 +39,8 @@ module.exports = {
         key: 'PATH TO YOUR SSL PRIVATE KEY',
         cert: 'PATH TO YOUR SSL CERTIFICATE',
 
-        // The certificate authority is optional. Don't specify it if you don't need it.
-        ca: 'PATH TO YOUR SSL CERTIFICATE AUTHORITY',
+        // The certificate authority is optional. Only un-comment and use it if you need it.
+        // ca: 'PATH TO YOUR SSL CERTIFICATE AUTHORITY',
 
         requestCert: true,
         rejectUnauthorized: false
