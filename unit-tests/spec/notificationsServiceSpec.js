@@ -1,4 +1,4 @@
-describe('Service notificationsService', function() {
+describe('The notifications service', function() {
     'use strict';
 
     beforeEach(angular.mock.module('musicQuizApp'));

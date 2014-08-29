@@ -1,4 +1,4 @@
-describe("Module musicQuizApp", function() {
+describe("The musicQuizApp module", function() {
     'use strict';
 
     beforeEach(angular.mock.module('musicQuizApp'));

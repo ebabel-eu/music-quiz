@@ -1,4 +1,4 @@
-describe("Module musicQuizApp config location", function() {
+describe("The musicQuizApp module config location", function() {
     'use strict';
 
     var $location;

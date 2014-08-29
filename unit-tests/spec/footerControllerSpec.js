@@ -1,4 +1,4 @@
-describe('Controller footerController', function() {
+describe('The footer controller', function() {
     'use strict';
 
     var ctrl, $scope;

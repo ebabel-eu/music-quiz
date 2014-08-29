@@ -1,4 +1,4 @@
-describe("Module musicQuizApp config filter", function() {
+describe("The musicQuizApp module config filter", function() {
     'use strict';
 
     var $filter;
