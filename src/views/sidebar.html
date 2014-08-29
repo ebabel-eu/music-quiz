@@ -21,9 +21,8 @@
             </div>
         </div>
 
-        <p ng-show="login.showLogin" class="text-center login-button">
-            <a href="/#login" class="btn btn-primary btn-lg btn-block">Login with Facebook</a>
-        </p>
+        <mq-FacebookLoginButton></mq-FacebookLoginButton>
+
 
         <div class="notifications" ng-show="notifications.collection.length > 0">
             <div ng-repeat="notification in notifications.collection" 
