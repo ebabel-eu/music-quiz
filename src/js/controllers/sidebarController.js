@@ -3,6 +3,7 @@ musicQuizApp.controller('sidebarController', ['$scope', 'notificationsService', 
     function ($scope, notificationsService, loginService) {
         'use strict';
 
+        $scope.showSidebarLoading = true;
         $scope.showSidebar = false;
 
         $scope.notifications = notificationsService;
@@ -39,6 +40,7 @@ musicQuizApp.controller('sidebarController', ['$scope', 'notificationsService', 
             FB.getLoginStatus(function (response) {
             	var callback = function ($scope) {
 	                // The sidebar has now been populated.
+                    $scope.showSidebarLoading = false;
 	                $scope.showSidebar = true;
 
 	                // Update the scope to display the sidebar.

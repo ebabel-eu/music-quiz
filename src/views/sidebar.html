@@ -1,8 +1,13 @@
-<aside class="col-lg-3 col-md-4 col-sm-4 col-xs-12" ng-show="showSidebar || !online">
+<div class="sidebar">
+    <div ng-show="showSidebar && !online">
+        <mq-offline></mq-offline>
+    </div>
 
-    <mq-offline></mq-offline>
+    <div ng-show="showSidebarLoading && online">
+        <span us-spinner="{radius:30, width:8, length: 16}"></span>
+    </div>
 
-    <div ng-show="online">
+    <div ng-show="showSidebar && online">
         <div class="panel panel-info" ng-show="login.showLogout">
             <div class="panel-heading">
                 {{greeting}} {{login.gamer.first_name || login.gamer.name}}.
@@ -53,5 +58,4 @@
 
         <mq-facebookads></mq-facebookads>
     </div>
-
-</aside>
+</div>

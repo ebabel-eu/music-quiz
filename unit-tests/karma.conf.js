@@ -8,6 +8,9 @@ module.exports = function(config) {
             'bower_components/angular-route/angular-route.js',
             'bower_components/angular-bootstrap/ui-bootstrap.js',
             'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+            'bower_components/spin.js/spin.js',
+            'bower_components/angular-spinner/angular-spinner.js',
+
             'src/js/app.js',
             'src/js/appConfig.js',
             'src/js/models/*.js',
