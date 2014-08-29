@@ -5,6 +5,7 @@ musicQuizApp.controller('loginController', ['$scope', 'notificationsService', 'l
 
         $scope.showResult = false;
 
+
         $scope.notifications = notificationsService;
 
         $scope.login = loginService;

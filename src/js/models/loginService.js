@@ -8,6 +8,7 @@ musicQuizApp.service('loginService', [
             getFriendsWhoPlay,
             that = this;
 
+
         this.gamer = {};
         this.showLogin = false;
         this.showLogout = false;
@@ -70,6 +71,8 @@ musicQuizApp.service('loginService', [
                 "message": "To play Music Quiz and win Music Coins, you first need to log into your Facebook account."
             }
         }
+
+
 
         // Logout the Facebook session of the current gamer.
         this.logout = function () {
