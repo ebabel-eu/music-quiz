@@ -6,7 +6,7 @@ musicQuizApp.directive('mqFacebookloginbutton',
 			restrict: 'E',
 			template: '<p ng-show="login.showLogin" class="text-center login-button">' +
                          '<a href="/#login" class="btn btn-primary btn-lg btn-block">Login with Facebook</a>' +
-                       '</p>',
+                      '</p>',
 			replace: true
 		};
 	}
