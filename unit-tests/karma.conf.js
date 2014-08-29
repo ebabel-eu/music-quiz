@@ -9,7 +9,7 @@ module.exports = function(config) {
             'bower_components/angular-bootstrap/ui-bootstrap.js',
             'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
             'src/js/app.js',
-            'src/js/config.js',
+            'src/js/appConfig.js',
             'src/js/models/*.js',
             'src/js/controllers/*.js',
             'src/js/directives/*.js',
