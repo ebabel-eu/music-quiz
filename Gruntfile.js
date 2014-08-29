@@ -19,7 +19,7 @@ module.exports = function (grunt) {
                     ],
                     './src/js/app.concat.js': [
                         'src/js/app.js',
-                        'src/js/config.js',
+                        'src/js/appConfig.js',
                         'src/js/models/*.js',
                         'src/js/controllers/*.js',
                         'src/js/directives/*.js'
