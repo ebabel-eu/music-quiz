@@ -1,4 +1,4 @@
-describe('Controller mainController', function() {
+describe('Controller footerController', function() {
     'use strict';
 
     var ctrl, $scope;
@@ -8,7 +8,7 @@ describe('Controller mainController', function() {
     beforeEach(angular.mock.inject(function($rootScope, $controller) {
         $scope = $rootScope.$new();
 
-        ctrl = $controller('mainController',
+        ctrl = $controller('footerController',
             {
                 $scope: $scope
             });
