@@ -12,4 +12,14 @@ describe('The mqOffline directive', function() {
     	angular.mock.inject(function (mqOfflineDirective) {
     		expect(mqOfflineDirective[0].restrict).toBe('E');
     	}));
+
+    it('defines an inline template',
+    	angular.mock.inject(function (mqOfflineDirective) {
+    		expect(mqOfflineDirective[0].template).toBeDefined();
+    	}));
+
+    it('has set its replace property to true', 
+    	angular.mock.inject(function (mqOfflineDirective) {
+    		expect(mqOfflineDirective[0].replace).toBe(true);
+    	}));
 });
