@@ -1,4 +1,4 @@
-musicQuizApp.directive('mqFacebookloginbutton', 
+musicQuizApp.directive('mqFacebooklogin', 
 
 	function() {
 
