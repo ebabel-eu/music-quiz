@@ -10,7 +10,7 @@
     <div ng-show="showSidebar && online">
         <div class="panel panel-info" ng-show="login.showLogout">
             <div class="panel-heading">
-                {{greeting}} {{login.gamer.first_name || login.gamer.name}}.
+                <mq-greetings greeting="greeting" togreet="login.gamer"></mq-greetings>
             </div>
             <div class="panel-body">
 
