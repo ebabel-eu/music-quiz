@@ -1,7 +1,7 @@
 // Handle Facebook logins for the current gamer.
-musicQuizApp.service('loginService', ['notificationsService', 
+musicQuizApp.service('loginService', ['notificationsService', 'Facebook', 
 
-    function (notificationsService) {
+    function (notificationsService, Facebook) {
         'use strict';
 
         var getGamerDetails,
@@ -15,7 +15,7 @@ musicQuizApp.service('loginService', ['notificationsService',
 
         // Get current gamer details.
         getGamerDetails = function(callback, $scope) {
-            FB.api("/v2.1/me?fields=name,first_name,last_name,email,picture,link,gender,locale,age_range", function (response) { 
+            Facebook.api("/v2.1/me?fields=name,first_name,last_name,email,picture,link,gender,locale,age_range", function (response) { 
                     if (response && !response.error) {
                         that.gamer = response;
                     }
@@ -30,10 +30,10 @@ musicQuizApp.service('loginService', ['notificationsService',
             );
         }
 
-        // This is called with the results from from FB.getLoginStatus().
+        // This is called with the results from from Facebook.getLoginStatus().
         this.statusChangeCallback = function (response, callback, $scope) {
             // The response object is returned with a status field that lets the app know the current login status of the person.
-            // Full docs on the response object can be found in the documentation for FB.getLoginStatus().
+            // Full docs on the response object can be found in the documentation for Facebook.getLoginStatus().
             if (response.status === 'connected') {
                 // Logged into your app and Facebook.
                 this.gamer = getGamerDetails(callback, $scope);
@@ -74,7 +74,7 @@ musicQuizApp.service('loginService', ['notificationsService',
 
         // Logout the Facebook session of the current gamer.
         this.logout = function() {
-            FB.logout();
+            Facebook.logout();
         }
 
         // Trigger a Facebook login.
@@ -83,7 +83,7 @@ musicQuizApp.service('loginService', ['notificationsService',
             //      1. Logged into your app ('connected')
             //      2. Logged into Facebook, but not your app ('not_authorized')
             //      3. Not logged into Facebook and can't tell if they are logged into your app or not.
-            FB.login(function (response) {
+            Facebook.login(function (response) {
                 callback(response);
             });
         }

@@ -10,6 +10,7 @@ module.exports = function(config) {
             'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
             'bower_components/spin.js/spin.js',
             'bower_components/angular-spinner/angular-spinner.js',
+            'bower_components/angular-facebook/lib/angular-facebook.js',
 
             'src/js/app.js',
             'src/js/appConfig.js',

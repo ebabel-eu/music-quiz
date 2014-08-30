@@ -20,4 +20,10 @@ musicQuizApp
         }])
 
         // Make built in filters from AngularJS accessible.
-        .config(['$filterProvider', function ($filterProvider) {}]); 
+        .config(['$filterProvider', function ($filterProvider) {}])
+
+        .config(function(FacebookProvider) {
+            // Set your appId through the setAppId method or
+            // use the shortcut in the initialize method directly.
+            FacebookProvider.init('319427958231932');
+        });

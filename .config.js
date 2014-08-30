@@ -19,15 +19,6 @@ module.exports = {
     // Directory that is published and made available.
     publicDirectory: '/src',
 
-    // Facebook graph settings for the fbgraph server side module.
-    // Note: Music Quiz O app settings (this isn't the P production app).
-    graph: {
-        client_id: 'YOUR FACEBOOK APP ID',
-        client_secret: 'YOUR FACEBOOK APP SECRET',
-        scope: 'email',
-        redirect_uri: 'https://localhost:8080/#/facebook'
-    },
-
     // Decibel API keys.
     decibel: {
         applicationId: 'YOUR DECIBEL API APPLICATION ID',
