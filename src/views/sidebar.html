@@ -13,13 +13,8 @@
                 {{greeting}} {{login.gamer.first_name || login.gamer.name}}.
             </div>
             <div class="panel-body">
-                <p>
-                    <a href="/#quiz-coins-account" class="label" 
-                            ng-class="{
-                                'label-info': quizCoins.balance >= quizCoins.danger, 
-                                'label-danger': quizCoins.balance < quizCoins.danger
-                            }">{{quizCoins.balance | number:0}} Quiz Coins</a>
-                </p>
+
+                <mq-quizcoinsbalance balance="quizCoins"></mq-quizcoinsbalance>
 
                 You are not {{login.gamer.first_name || login.gamer.name}}? 
                 <a href="/#logout" class="btn btn-default btn-xs">Logout</a>
