@@ -63,12 +63,12 @@ musicQuizApp.service('loginService', ['notificationsService', 'Facebook',
             authorizationRequired: {
                 "type": "info",
                 "title": "Authorize this game",
-                "message": "To play Music Quiz and win Music Coins, you first need to accept to play this game with your Facebook account."
+                "message": "To play Music Quiz and win Quiz Coins, you first need to accept to play this game with your Facebook account."
             },
             loginRequired: {
                 "type": "warning",
                 "title": "Log into Facebook please",
-                "message": "To play Music Quiz and win Music Coins, you first need to log into your Facebook account."
+                "message": "To play Music Quiz and win Quiz Coins, you first need to log into your Facebook account."
             }
         }
 

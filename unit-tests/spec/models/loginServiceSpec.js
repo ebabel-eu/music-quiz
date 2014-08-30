@@ -7,9 +7,4 @@ describe('The login service', function() {
         angular.mock.inject(function (loginService) {
             expect(loginService.gamer).toEqual({});
         }));
-
-    // it('has a function statusChangeCallback',
-    // 	angular.mock.inject(function (loginService) {
-    // 		expect(loginService.statusChangeCallback).toBeDefined();
-    // 	}));
 });
