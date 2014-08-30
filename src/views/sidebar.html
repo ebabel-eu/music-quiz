@@ -9,8 +9,8 @@
 
     <div ng-show="showSidebar && online">
         <div class="panel panel-info" ng-show="login.showLogout">
-            <div class="panel-heading">
-                <mq-greetings greeting="greeting" togreet="login.gamer"></mq-greetings>
+            <div class="panel-heading" ng-controller="greetingsController">
+                <mq-greetings greeting="greeting" togreet="login.gamer.first_name || login.gamer.name || 'guest player'"></mq-greetings>
             </div>
             <div class="panel-body">
 

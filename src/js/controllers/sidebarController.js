@@ -8,8 +8,6 @@ musicQuizApp.controller('sidebarController', ['$scope', 'notificationsService', 
 
         $scope.notifications = notificationsService;
 
-        $scope.greeting = 'Hello';
-
         $scope.login = loginService;
 
         $scope.online = navigator.onLine;

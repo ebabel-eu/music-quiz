@@ -9,7 +9,7 @@ musicQuizApp.directive('mqGreetings',
 							greeting: '=greeting',
 							togreet: '=togreet'
 						},
-			template: 	'<span>{{greeting}} {{togreet.first_name || togreet.name}}.</span>'
+			template: 	'<span>{{greeting}} {{togreet}}.</span>'
 		};
 	}
 
