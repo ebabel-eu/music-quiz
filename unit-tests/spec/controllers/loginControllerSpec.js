@@ -18,17 +18,17 @@ describe('The login controller', function() {
         expect(ctrl).toBeDefined();
     });
 
-    it('should have a showResult value in its scope', function() {
-        expect($scope.$showResult).toBeDefined();
-    });
+    // it('should have a showResult value in its scope', function() {
+    //     expect($scope.$showResult).toBeDefined();
+    // });
 
-    it('should have a login value in its scope', function() {
-        expect($scope.$login).toBeDefined();
-    });
+    // it('should have a login value in its scope', function() {
+    //     expect($scope.$login).toBeDefined();
+    // });
 
-    it('should have a notifications value in its scope', function() {
-        expect($scope.$notifications).toBeDefined();
-    });
+    // it('should have a notifications value in its scope', function() {
+    //     expect($scope.$notifications).toBeDefined();
+    // });
 
 
 });
