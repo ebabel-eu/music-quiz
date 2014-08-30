@@ -14,7 +14,9 @@
             </div>
             <div class="panel-body">
 
-                <mq-quizcoinsbalance balance="quizCoins"></mq-quizcoinsbalance>
+                <p ng-controller="quizcoinsController">
+                    <mq-quizcoinsbalance balance="quizCoins"></mq-quizcoinsbalance>
+                </p>
 
                 You are not {{login.gamer.first_name || login.gamer.name}}? 
                 <a href="/#logout" class="btn btn-default btn-xs">Logout</a>
