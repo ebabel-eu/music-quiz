@@ -30,4 +30,8 @@ describe('The login controller', function() {
         expect($scope.notifications).toBeDefined();
     });
 
+    it('should define a login function in the login object', function() {
+        expect($scope.login.login).toBeDefined();
+    });
+
 });
