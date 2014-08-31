@@ -19,11 +19,10 @@ module.exports = function (grunt) {
                         './bower_components/spin.js/spin.js',
                         './bower_components/angular-spinner/angular-spinner.js',
                         './bower_components/angular-facebook/lib/angular-facebook.js'
-                        // When adding a new dependency to Grunt, add it also to karma.conf.js
                     ],
                     './src/js/app.concat.js': [
                         'src/js/app.js',
-                        'src/js/appConfig.js',
+                        'src/js/*Config.js',
                         'src/js/models/*.js',
                         'src/js/controllers/*.js',
                         'src/js/directives/*.js'

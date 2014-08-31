@@ -3,21 +3,8 @@ module.exports = function(config) {
         basePath: '../',
         frameworks: ['jasmine'],
         files: [
-            'bower_components/angular/angular.js',
-            'bower_components/angular-mocks/angular-mocks.js',
-            'bower_components/angular-route/angular-route.js',
-            'bower_components/angular-bootstrap/ui-bootstrap.js',
-            'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-            'bower_components/spin.js/spin.js',
-            'bower_components/angular-spinner/angular-spinner.js',
-            'bower_components/angular-facebook/lib/angular-facebook.js',
-
-            'src/js/app.js',
-            'src/js/appConfig.js',
-            'src/js/models/*.js',
-            'src/js/controllers/*.js',
-            'src/js/directives/*.js',
-            'unit-tests/spec/**/*.js'
+            'src/js/dependencies.concat.js',
+            'src/js/app.concat.js'
         ],
         exclude: [
             'unit-tests/spec/*_Exclude/*.js'
