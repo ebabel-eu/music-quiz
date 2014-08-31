@@ -36,21 +36,19 @@ musicQuizApp.service('loginService', ['notificationsService', 'Facebook',
             // Full docs on the response object can be found in the documentation for Facebook.getLoginStatus().
             if (response.status === 'connected') {
                 // Logged into your app and Facebook.
-                this.gamer = getGamerDetails(callback, $scope);
-                this.showLogout = true;
-                this.showLogin = false;
-                return this.gamer;
-            } else if (response.status === 'not_authorized') {
-                // The person is logged into Facebook, but not your app.
-                this.showLogin = true;
-                this.showLogout = false;
+                that.gamer = getGamerDetails(callback, $scope);
+                that.showLogin = false;
+                that.showLogout = true;
             } else {
-                // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
-                this.showLogin = true;
-                this.showLogout = false;
+                // response.status is 'not_authorized': the gamer is logged into Facebook, but not this app,
+                // or response.status has any other value: the gamer is not logged into Facebook, so we're not sure if they are logged into this app or not.
+                that.showLogin = true;
+                that.showLogout = false;
             }
 
             callback($scope);
+
+            return that;
         }
 
         // Standard notifications related to login operations.

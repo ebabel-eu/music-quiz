@@ -4,9 +4,27 @@ describe('The login service', function() {
         beforeEach(angular.mock.module('musicQuizApp'));
 
         it('should have a gamer property which is initially an empty object', 
-                angular.mock.inject(function (loginService) {
-                        expect(loginService.gamer).toEqual({});
-                }));
+            angular.mock.inject(function (loginService) {
+                expect(loginService.gamer).toEqual({});
+            }));
+
+        it('should be able to call its statusChangeCallback function with a response status of \'not_authorized\'',
+            angular.mock.inject(function (loginService) {
+                var response = { status: 'not_authorized' },
+                    callback = function () {},
+                    scope = null;
+
+                expect(loginService.statusChangeCallback(response, callback, scope)).toBeDefined();
+            }));
+
+        it('should be able to call its statusChangeCallback function with a response status of \'connected\'',
+            angular.mock.inject(function (loginService) {
+                var response = { status: 'connected' },
+                    callback = function () {},
+                    scope = null;
+
+                expect(loginService.statusChangeCallback(response, callback, scope)).toBeDefined();
+            }));
 
         it('should have default notifications',
             angular.mock.inject(function (loginService) {

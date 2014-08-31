@@ -20,12 +20,9 @@ musicQuizApp.controller('sidebarController', ['$scope', 'notificationsService', 
         //      3. Not logged into Facebook and can't tell if they are logged into your app or not.
         Facebook.getLoginStatus(function (response) {
         	var callback = function ($scope) {
-                // Update the scope to display the sidebar.
-                $scope.$apply(function() {
-                    // The sidebar has now been populated.
-                    $scope.showSidebarLoading = false;
-                    $scope.showSidebar = true;
-                });
+                // The sidebar has now been populated.
+                $scope.showSidebarLoading = false;
+                $scope.showSidebar = true;
         	};
 
             // Notifications to display.

@@ -16,11 +16,7 @@ musicQuizApp.controller('loginController', ['$scope', 'notificationsService', 'l
             var callback = function ($scope) {
                 // The sidebar has now been populated.
                 $scope.showSidebar = true;
-
                 $scope.showResult = true;
-
-                // Update the scope to display the sidebar.
-                $scope.$apply();
             };
 
             // Notifications to display.
