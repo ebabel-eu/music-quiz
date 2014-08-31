@@ -1,1 +1,28 @@
+# MacOS
 .DS_Store
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Server side
+node_modules
+ssl
+config.js
+log.txt
+
+# Client side
+bower_components
+.sass-cache
+*.concat.js
+src/fonts
+src/css/screen.css
+src/css/screen.css.map
+
+# Distribution package
+dist
+
+# Documentation
+docs/~*
