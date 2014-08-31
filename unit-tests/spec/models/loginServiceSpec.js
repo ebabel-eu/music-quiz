@@ -75,12 +75,26 @@ describe('The login service', function() {
             expect(result.then()).toBeDefined();
         }));
 
-    it('should be able to call the Facebook login from within the login function',
-        angular.mock.inject(function (loginService) {
-            loginService.login(function() {});
-        }));
-
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
