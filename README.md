@@ -114,16 +114,6 @@ Browse to localhost on the port that is being listened to.
 OAuth from the [https://developers.facebook.com/docs/facebook-login/login-flow-for-web/v2.1](Facebook login is documented) on the official Facebook developer website. The [https://developers.facebook.com/docs/plugins/login-button](login button is documented) on the same site.
 
 
-## Assembly community
-
-This is a product being built by the Assembly community. You can help push this idea forward by visiting [https://assembly.com/music-quiz](https://assembly.com/music-quiz).
-
-### How Assembly Works
-
-Assembly products are like open-source and made with contributions from the community. Assembly handles the boring stuff like hosting, support, financing, legal, etc. Once the product launches we collect the revenue and split the profits amongst the contributors.
-
-Visit [https://assembly.com](https://assembly.com) to learn more.
-
 ## Run from source once everything has been installed
 
 Each command in a separate terminal since they watch for changes (grunt and karma) or just run continuously (node):
