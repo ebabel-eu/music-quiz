@@ -74,7 +74,7 @@ musicQuizApp.service('loginService', ['notificationsService', 'Facebook',
 
         // Logout the Facebook session of the current gamer.
         this.logout = function() {
-            Facebook.logout();
+            return Facebook.logout();
         }
 
         // Trigger a Facebook login.
@@ -83,7 +83,7 @@ musicQuizApp.service('loginService', ['notificationsService', 'Facebook',
             //      1. Logged into your app ('connected')
             //      2. Logged into Facebook, but not your app ('not_authorized')
             //      3. Not logged into Facebook and can't tell if they are logged into your app or not.
-            Facebook.login(function (response) {
+            return Facebook.login(function (response) {
                 callback(response);
             });
         }
