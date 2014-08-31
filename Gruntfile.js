@@ -19,13 +19,14 @@ module.exports = function (grunt) {
                         './bower_components/spin.js/spin.js',
                         './bower_components/angular-spinner/angular-spinner.js',
                         './bower_components/angular-facebook/lib/angular-facebook.js'
+                        // Update ./unit-tests/karma.conf.js when adding new dependencies.
                     ],
                     './src/js/app.concat.js': [
-                        'src/js/app.js',
-                        'src/js/*Config.js',
-                        'src/js/models/*.js',
-                        'src/js/controllers/*.js',
-                        'src/js/directives/*.js'
+                        './src/js/app.js',
+                        './src/js/*Config.js',
+                        './src/js/models/*.js',
+                        './src/js/controllers/*.js',
+                        './src/js/directives/*.js'
                     ]
                 }
             }

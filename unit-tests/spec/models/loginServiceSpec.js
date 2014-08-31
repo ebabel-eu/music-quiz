@@ -1,6 +1,8 @@
 describe('The login service', function() {
     'use strict';
 
+    var httpBackend;
+
     beforeEach(angular.mock.module('musicQuizApp'));
 
     it('should have a gamer property which is initially an empty object', 
@@ -53,6 +55,54 @@ describe('The login service', function() {
 
     it('should be able to call its login function',
         angular.mock.inject(function (loginService) {
-            expect(loginService.login(function(){})).toBeDefined();
+            expect(loginService.login(function() {})).toBeDefined();
         }));
+
+    it('should be able to call its login function',
+        angular.mock.inject(function (loginService) {
+            expect(loginService.login(function() {})).toBeDefined();
+        }));
+
+    it('should be able to access the Facebook login \'then\' function returned by the login function',
+        angular.mock.inject(function (loginService) {
+            var result = loginService.login(function() {});
+            expect(result.then).toBeDefined();
+        }));
+
+    it('should be able to call the Facebook login \'then\' function returned by the login function',
+        angular.mock.inject(function (loginService) {
+            var result = loginService.login(function() {});
+            expect(result.then()).toBeDefined();
+        }));
+
+    it('should be able to call the Facebook login from within the login function',
+        angular.mock.inject(function (loginService) {
+            loginService.login(function() {});
+        }));
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

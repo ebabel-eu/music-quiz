@@ -28,9 +28,14 @@ You will need to setup SSL, either a self signed certificate or a real SSL.
 The paths to your SSL is in your config.js file.
 
 
-### Facebook and Decibel
+### Facebook config
 
-You also need to setup a Facebook App and signup to the Decibel API. Both will issue keys to store in config.js
+Update the ./src/js/facebookConfig.js file with your Facebook Application Id.
+
+
+### Decibel config
+
+Set the Decibel API keys in the ./config.js file you created, based on the template ./.config.js file.
 
 
 ### Sass
