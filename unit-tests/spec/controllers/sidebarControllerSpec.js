@@ -22,12 +22,14 @@ describe('The sidebar controller', function() {
         expect($scope).toBeDefined();
     });
 
-    it('should set showSidebarLoading to false by default', function() {
-        expect($scope.showSidebarLoading).toBe(false);
+    it('should set showSidebarLoading to true by default', function() {
+        expect($scope.showSidebarLoading).toBe(true);
     });
 
     it('should set showSidebar to false by default', function() {
         expect($scope.showSidebar).toBe(false);
     });
+
+    // todo: try adding a jasmine spy to fake the Facebook object.
 
 });
