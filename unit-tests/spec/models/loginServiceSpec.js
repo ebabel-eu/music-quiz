@@ -1,13 +1,33 @@
 describe('The login service', function() {
     'use strict';
 
-    var httpBackend;
-
     beforeEach(angular.mock.module('musicQuizApp'));
 
     it('should have a gamer property which is initially an empty object', 
         angular.mock.inject(function (loginService) {
             expect(loginService.gamer).toEqual({});
+        }));
+
+    it('should define the facebookCallback function',
+        angular.mock.inject(function (loginService) {
+            expect(loginService.facebookCallback).toBeDefined();
+        }));
+
+    it('should be able to call the facebookCallback function with no error in the response',
+        angular.mock.inject(function (loginService) {
+            var result = loginService.facebookCallback({first_name: 'first name of gamer'});
+            expect(result.first_name).toBe('first name of gamer');
+        }));
+
+    it('should be able to call the facebookCallback function with an error in the response',
+        angular.mock.inject(function (loginService) {
+            var result = loginService.facebookCallback({error: {}});
+            expect(result.error).toEqual({});
+        }));
+
+    it('should define a setGamerDetails function',
+        angular.mock.inject(function (loginService) {
+            expect(loginService.setGamerDetails).toBeDefined();
         }));
 
     it('should be able to call its statusChangeCallback function with a response status of \'not_authorized\'',

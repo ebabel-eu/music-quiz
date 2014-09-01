@@ -4,30 +4,29 @@ musicQuizApp.service('loginService', ['notificationsService', 'Facebook',
     function (notificationsService, Facebook) {
         'use strict';
 
-        var getGamerDetails,
-            getFriendsWhoPlay,
-            that = this;
-
+        var that = this;
 
         this.gamer = {};
         this.showLogin = false;
         this.showLogout = false;
 
-        // Get current gamer details.
-        getGamerDetails = function(callback, $scope) {
-            Facebook.api("/v2.1/me?fields=name,first_name,last_name,email,picture,link,gender,locale,age_range", function (response) { 
-                    if (response && !response.error) {
-                        that.gamer = response;
-                    }
+        this.facebookCallback = function (response) { 
+            if (response && !response.error) {
+                that.gamer = response;
+            }
 
-                    if (response && response.error) {
-                        // todo: what's the best way to handle this error? A notification?
-                        console.log(response.error);
-                    }
+            if (response && response.error) {
+                // todo: send a notification.
+            }
 
-                    callback($scope);
-                }
-            );
+            return response;
+        }
+
+        // Set current gamer details.
+        this.setGamerDetails = function() {
+            Facebook.api(
+                    "/v2.1/me?fields=name,first_name,last_name,email,picture,link,gender,locale,age_range", 
+                    that.facebookCallback);
         }
 
         // This is called with the results from from Facebook.getLoginStatus().
@@ -36,7 +35,7 @@ musicQuizApp.service('loginService', ['notificationsService', 'Facebook',
             // Full docs on the response object can be found in the documentation for Facebook.getLoginStatus().
             if (response.status === 'connected') {
                 // Logged into your app and Facebook.
-                that.gamer = getGamerDetails(callback, $scope);
+                that.gamer = that.setGamerDetails();
                 that.showLogin = false;
                 that.showLogout = true;
             } else {
