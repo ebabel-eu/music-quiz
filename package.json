@@ -1,7 +1,7 @@
 {
   "name": "musicQuiz",
   "description": "Music quiz using the Decibel API.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "body-parser": "1.6.3",
