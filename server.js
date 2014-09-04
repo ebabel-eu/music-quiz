@@ -59,10 +59,34 @@
         next();
     });
 
+    //simple test from http://inessential.com/2013/12/09/getting_started_with_web_services_using_
+    app.get('/now', function(request, response) {
+      var d = new Date();
+      response.send(200, {date: d});
+    });
+
+    //simple test re-write as post
+    app.post('/now', function(request, response) {
+      var d = new Date();
+      response.send(200, {date: d});
+    });
+
+
+    // app.post('/dob', function(request, response) {
+    //   //var dob = request.body;
+    //   var age = Date.now() - request.dob;
+    //   response.send(200, {approx_age: age});
+    // });
+
+
     // Handle all static file GET requests.
     app.use(express.static(__dirname + config.publicDirectory), {
         maxAge: config.expiryDate
     });
+
+
+
+
 
     // Start listening on a port.
     server = https.createServer(ssl, app).listen(config.port, function() {
