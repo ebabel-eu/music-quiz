@@ -36,4 +36,9 @@ describe('The logout controller', function() {
     	expect($window.location.href).toBe('/');
     });
 
+    it('should be able to call the timeoutCallback function', function() {
+    	var result = $scope.timeoutCallback();
+    	expect(result).not.toBe(undefined);
+    });
+
 });

@@ -3,18 +3,23 @@ musicQuizApp.controller('logoutController', ['$scope', '$window', '$q', 'loginSe
     function ($scope, $window, $q, loginService) {
 		'use strict';
 
-        var asyncLogout;
+        var asyncLogout,
+            timeoutCallback,
+            deferred = $q.defer();
 
         $scope.showResult = false;
         $scope.login = loginService;
 
-        asyncLogout = function (timeoutDelay) {
-            var deferred = $q.defer();
+        $scope.timeoutCallback = function () {
+            $scope.login.logout();
+            
+            deferred.resolve();
 
-            setTimeout(function () {
-                $scope.login.logout();
-                deferred.resolve();
-            }, timeoutDelay);
+            return deferred;
+        }
+
+        asyncLogout = function (timeoutDelay) {
+            setTimeout($scope.timeoutCallback, timeoutDelay);
 
             return deferred.promise;
         }
