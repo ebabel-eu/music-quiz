@@ -30,7 +30,8 @@ The paths to your SSL is in your config.js file.
 
 ### Facebook config
 
-Update the ./src/js/facebookConfig.js file with your Facebook Application Id.
+Rename the ./src/js/.facebookConfig.js file as the same file name but without the initial dot, in the same directory.
+Put in your actual Facebook Application Id and never commit this file (it's already in .gitignore).
 
 
 ### Decibel config
