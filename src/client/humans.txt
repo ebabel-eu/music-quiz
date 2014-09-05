@@ -4,6 +4,7 @@
 # TEAM
 
     Nadjib Amar -- Developer -- @ebabel
+    David Pitts -- Developer -- @dgapitts
 
 # THANKS
 

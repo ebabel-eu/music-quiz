@@ -85,14 +85,15 @@ ulimit -n 1024 && mongod --dbpath /usr/local/db
 
 Note: mkdir is required only if that directory doesn't already exist from a previous setup.
 
+
 Mongo cli commands:
 
 ```
 mongo
-show dbs
-use music-quiz
-show collections
-db.fbusers.find()
+show dbs;
+use music-quiz;
+show collections;
+db.fbusers.find();
 ```
 
 
