@@ -15,11 +15,11 @@ module.exports = function(config) {
             './bower_components/angular-facebook/lib/angular-facebook.js',
 
             // Application code.
-            './src/js/app.js',
-            './src/js/*Config.js',
-            './src/js/models/*.js',
-            './src/js/controllers/*.js',
-            './src/js/directives/*.js',
+            './src/client/js/app.js',
+            './src/client/js/*Config.js',
+            './src/client/js/models/*.js',
+            './src/client/js/controllers/*.js',
+            './src/client/js/directives/*.js',
 
             // Unit tests.
             './unit-tests/spec/**/*.js'
@@ -29,7 +29,7 @@ module.exports = function(config) {
         ],
         browsers: ['PhantomJS'],
         autoWatch: true,
-        preprocessors: { 'src/js/**/*.js': ['coverage'] },
+        preprocessors: { 'src/client/js/**/*.js': ['coverage'] },
         reporters: ['progress', 'coverage'],
         coverageReporter: {
             type: 'html',

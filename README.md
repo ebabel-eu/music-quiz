@@ -30,7 +30,7 @@ The paths to your SSL is in your config.js file.
 
 ### Facebook config
 
-Rename the ./src/js/.facebookConfig.js file as the same file name but without the initial dot, in the same directory.
+Rename the ./src/client/js/.facebookConfig.js file as the same file name but without the initial dot, in the same directory.
 Put in your actual Facebook Application Id and never commit this file (it's already in .gitignore).
 
 
@@ -46,14 +46,14 @@ Start the batch process that will watch for changes to the css styles and combin
 Windows:
 
 ```
-open the directory ./src/css/sass/
+open the directory ./src/client/css/sass/
 double click on watch.bat to open it and start its process (Windows only)
 ```
 
 Mac OS:
 
 ```
-cd ./src/css/sass/
+cd ./src/client/css/sass/
 sass --watch "screen.scss:../screen.css"
 ```
 
@@ -124,7 +124,7 @@ node ./server.js
 Mac OS X:
 
 ```
-sudo node ./server.js
+node ./server.js
 ```
 
 Browse to localhost on the port that is being listened to.

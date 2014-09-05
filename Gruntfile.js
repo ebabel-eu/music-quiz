@@ -9,7 +9,7 @@ module.exports = function (grunt) {
             },
             js: {
                 files: {
-                    './src/js/dependencies.concat.js' : [
+                    './src/client/js/dependencies.concat.js' : [
                         './bower_components/angular/angular.js',
                         './bower_components/angular-mocks/angular-mocks.js',
                         './bower_components/angular-route/angular-route.js',
@@ -21,12 +21,12 @@ module.exports = function (grunt) {
                         './bower_components/angular-facebook/lib/angular-facebook.js'
                         // Update ./unit-tests/karma.conf.js when adding new dependencies.
                     ],
-                    './src/js/app.concat.js': [
-                        './src/js/app.js',
-                        './src/js/*Config.js',
-                        './src/js/models/*.js',
-                        './src/js/controllers/*.js',
-                        './src/js/directives/*.js'
+                    './src/client/js/app.concat.js': [
+                        './src/client/js/app.js',
+                        './src/client/js/*Config.js',
+                        './src/client/js/models/*.js',
+                        './src/client/js/controllers/*.js',
+                        './src/client/js/directives/*.js'
                     ]
                 }
             }
@@ -41,10 +41,10 @@ module.exports = function (grunt) {
             js: {
                 files: {
                     './dist/js/dependencies.min.js': [
-                        './src/js/dependencies.concat.js'
+                        './src/client/js/dependencies.concat.js'
                     ],
                     './dist/js/app.min.js': [
-                        './src/js/app.concat.js'
+                        './src/client/js/app.concat.js'
                     ]
                 }
             }
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
             combine: {
                 files: {
                     './dist/css/screen.min.css': [
-                        './src/css/screen.css'
+                        './src/client/css/screen.css'
                     ],
                 }
             }
@@ -77,7 +77,7 @@ module.exports = function (grunt) {
                             './bower_components/open-sans-fontface/fonts/Light/**',
                             './bower_components/open-sans-fontface/fonts/Semibold/**'
                         ], 
-                        dest: './src/fonts/', 
+                        dest: './src/client/fonts/', 
                         filter: 'isFile'
                     },
                     {
@@ -99,7 +99,7 @@ module.exports = function (grunt) {
         // Re-run these automated tasks each time certain files are modified.
         watch: {
             scripts: {
-                files: ['./Gruntfile.js', './src/js/**/*.js', '!./src/js/**/*.concat.js'],
+                files: ['./Gruntfile.js', './src/client/js/**/*.js', '!./src/client/js/**/*.concat.js'],
                 tasks: ['default']
             }
         }
