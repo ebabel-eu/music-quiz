@@ -69,7 +69,15 @@ mongod.exe --dbpath C:\mongodb\data
 Max OS:
 
 ```
-todo: write the Mongo DB instructions for Mac OS
+Install Mongo via brew:
+
+cd /user/local
+brew install mongodb
+
+To start mongod (background demon) in a seperate/dedicated shell:
+
+mkdir -p /usr/local/db    << this is required for only the first startup
+ulimit -n 1024 && mongod --dbpath /usr/local/db
 ```
 
 
