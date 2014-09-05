@@ -79,6 +79,53 @@
     // });
 
 
+    var mongoose = require( 'mongoose' );
+    var Schema   = mongoose.Schema;
+     
+    var FBUser = new Schema({
+        user_id    : String,
+        firstname  : String,
+        lastname   : String,
+        created_at : Date,
+        updated_at : Date
+    });
+     
+    mongoose.model( 'FBUser', FBUser );
+    mongoose.connect( 'mongodb://localhost/music-quiz' );
+
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function callback () {
+      console.log("mongoose connection OK " );
+
+    var kittySchema = mongoose.Schema({
+        name: String
+    })
+
+    kittySchema.methods.speak = function () {
+      var greeting = this.name
+        ? "Meow name is " + this.name
+        : "I don't have a name"
+      console.log(greeting);
+    }
+
+    var Kitten = mongoose.model('Kitten', kittySchema)
+
+    var Edwina = new Kitten({ name: 'Edwina' });
+    Edwina.save(); 
+    Edwina.speak(); 
+
+    });
+
+
+
+
+
+
+
+
+
+
     // Handle all static file GET requests.
     app.use(express.static(__dirname + config.publicDirectory), {
         maxAge: config.expiryDate
