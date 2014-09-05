@@ -1,7 +1,7 @@
 // Handle Facebook logins for the current gamer.
-musicQuizApp.service('loginService', ['notificationsService', 'Facebook', 
+musicQuizApp.service('loginService', ['$rootScope', 'notificationsService', 'Facebook', 'accountService', 
 
-    function (notificationsService, Facebook) {
+    function ($rootScope, notificationsService, Facebook, accountService) {
         'use strict';
 
         var that = this;
@@ -13,6 +13,7 @@ musicQuizApp.service('loginService', ['notificationsService', 'Facebook',
         this.facebookCallback = function (response) { 
             if (response && !response.error) {
                 that.gamer = response;
+                $rootScope.$broadcast('setGamerDetailsEvent', that.gamer);
             }
 
             if (response && response.error) {
