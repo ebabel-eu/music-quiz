@@ -1,0 +1,13 @@
+.gamerPicture {
+	margin-right: em(7, 14);
+	width: em(50, 14);
+	height: em(50, 14);
+	display: block;
+	float: left;
+
+	img {
+		width: em(50, 14);
+		height: em(50, 14);
+		border: solid thin $brand-primary;
+	}
+}

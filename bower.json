@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/asm-products/music-quiz",
   "authors": [
-    "Nadjib Amar <hello@ebabel.eu>"
+    "Nadjib Amar <hello@ebabel.eu>",
+    "Dave Pitts <dgapitts@gmail.com>"
   ],
   "description": "Music Quiz is a game that leverages the Decibel API to ask questions about music.",
   "main": "server.js",
