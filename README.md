@@ -57,6 +57,21 @@ cd ./src/css/sass/
 sass --watch "screen.scss:../screen.css"
 ```
 
+### MongoDB
+
+Windows:
+
+```
+cd C:\Program Files\MongoDB 2.6 Standard\bin
+mongod.exe --dbpath C:\mongodb\data
+```
+
+Max OS:
+
+```
+todo: write the Mongo DB instructions for Mac OS
+```
+
 
 ### Grunt
 

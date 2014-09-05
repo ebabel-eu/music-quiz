@@ -17,7 +17,7 @@ module.exports = {
     port: 8080,
 
     // Directory that is published and made available.
-    publicDirectory: '/src',
+    publicDirectory: '/src/client',
 
     // Decibel API keys.
     decibel: {
