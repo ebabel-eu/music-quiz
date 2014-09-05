@@ -17,10 +17,10 @@ log.txt
 bower_components
 .sass-cache
 *.concat.js
-src/fonts
-src/css/screen.css
-src/css/screen.css.map
-src/js/facebookConfig.js
+src/client/fonts
+src/client/css/screen.css
+src/client/css/screen.css.map
+src/client/js/facebookConfig.js
 
 # Distribution package
 dist
