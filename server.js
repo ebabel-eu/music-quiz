@@ -59,10 +59,81 @@
         next();
     });
 
+    //simple test from http://inessential.com/2013/12/09/getting_started_with_web_services_using_
+    app.get('/now', function(request, response) {
+      var d = new Date();
+      response.send(200, {date: d});
+    });
+
+    //simple test re-write as post
+    app.post('/now', function(request, response) {
+      var d = new Date();
+      response.send(200, {date: d});
+    });
+
+
+    // app.post('/dob', function(request, response) {
+    //   //var dob = request.body;
+    //   var age = Date.now() - request.dob;
+    //   response.send(200, {approx_age: age});
+    // });
+
+
+    var mongoose = require( 'mongoose' );
+    var Schema   = mongoose.Schema;
+     
+    var FBUser = new Schema({
+        user_id    : String,
+        firstname  : String,
+        lastname   : String,
+        created_at : Date,
+        updated_at : Date
+    });
+     
+    mongoose.model( 'FBUser', FBUser );
+    mongoose.connect( 'mongodb://localhost/music-quiz' );
+
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function callback () {
+      console.log("mongoose connection OK " );
+
+    var kittySchema = mongoose.Schema({
+        name: String
+    })
+
+    kittySchema.methods.speak = function () {
+      var greeting = this.name
+        ? "Meow name is " + this.name
+        : "I don't have a name"
+      console.log(greeting);
+    }
+
+    var Kitten = mongoose.model('Kitten', kittySchema)
+
+    var Edwina = new Kitten({ name: 'Edwina' });
+    Edwina.save(); 
+    Edwina.speak(); 
+
+    });
+
+
+
+
+
+
+
+
+
+
     // Handle all static file GET requests.
     app.use(express.static(__dirname + config.publicDirectory), {
         maxAge: config.expiryDate
     });
+
+
+
+
 
     // Start listening on a port.
     server = https.createServer(ssl, app).listen(config.port, function() {
