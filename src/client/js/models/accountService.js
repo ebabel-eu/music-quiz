@@ -19,7 +19,7 @@ musicQuizApp.service('accountService', ['$rootScope', '$http',
         }
 
         postGamerDetailsToAccount = function (gamer) {
-            $http.post('/api/accounts', gamer)
+            $http.post('/api/1.0.0/account', gamer)
                     .success(successCallback)
                     .error(errorCallback);
         }
