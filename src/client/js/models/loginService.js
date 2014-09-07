@@ -81,9 +81,11 @@ musicQuizApp.service('loginService', ['$rootScope', 'notificationsService', 'Fac
             //      1. Logged into your app ('connected')
             //      2. Logged into Facebook, but not your app ('not_authorized')
             //      3. Not logged into Facebook and can't tell if they are logged into your app or not.
-            return Facebook.login(function (response) {
-                callback(response);
-            });
+            return Facebook.login(function (response) {callback(response);}, 
+                {
+                    scope: 'email, public_profile', 
+                    return_scopes: true
+                });
         }
     }
 ]);

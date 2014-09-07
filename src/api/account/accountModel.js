@@ -3,10 +3,23 @@ var accountSchema = function () {
     var Schema = require("mongoose").Schema;
 
     return new Schema({
-        id: Number,
+        id: {
+            type: Number,
+            index: true,
+            unique: true,
+            required: true,
+            dropDups: true
+        },
         name: String,
         first_name: String,
         last_name: String,
+        email: {
+            type: String,
+            index: true,
+            unique: true,
+            required: true,
+            dropDups: true
+        },
         picture: {
             data: {
                 is_silhouette: Boolean,
