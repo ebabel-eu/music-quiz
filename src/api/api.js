@@ -1,7 +1,7 @@
 module.exports = function (app, options) {
 
-	var kitten;
-	var account;
+	var kitten,
+		account;
 
 	options.handleError = function (err, req, res, msg) {
 		res.send({
