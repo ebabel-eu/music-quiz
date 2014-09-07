@@ -7,13 +7,16 @@ module.exports = function (app, options) {
 
     // Get a list of all kitten records.
     app.get('/api/1.0.0/kitten', function (req, res) {
-        // Mongoose querying via querystring. Ex: append ?take=2
+        // Mongoose querying via querystring. 
+        // Ex: append ?take=2 or ?filter={"name": "Ido"}
         var qSkip = req.query.skip,
             qTake = req.query.take,
             qSort = req.query.sort,
-            qFilter = req.query.filter;
+            qFilter = req.query.filter ? JSON.parse(req.query.filter) : {};
 
-        kittenModel.find()
+        console.log(qFilter);
+
+        kittenModel.find(qFilter)
             .sort(qSort)
             .skip(qSkip)
             .limit(qTake)
