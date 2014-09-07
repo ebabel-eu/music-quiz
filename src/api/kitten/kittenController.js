@@ -14,8 +14,6 @@ module.exports = function (app, options) {
             qSort = req.query.sort,
             qFilter = req.query.filter ? JSON.parse(req.query.filter) : {};
 
-        console.log(qFilter);
-
         kittenModel.find(qFilter)
             .sort(qSort)
             .skip(qSkip)
