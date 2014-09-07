@@ -3,10 +3,7 @@ var accountSchema = function () {
     var Schema = require("mongoose").Schema;
 
     return new Schema({
-        id: {
-            type: mongoose.Types.ObjectId,
-            index: true
-        },
+        id: Number,
         name: String,
         first_name: String,
         last_name: String,
@@ -31,14 +28,4 @@ var accountSchema = function () {
 // Expose the model.
 module.exports = function (db) {
     return db.model('account', accountSchema());
-};
-
-
-var mongoose = require("mongoose"),
-    accountSchema = new mongoose.Schema({
-    }),
-    account = mongoose.model('account', accountSchema);
-
-module.exports = {
-    account: account
 };
