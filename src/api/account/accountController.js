@@ -3,10 +3,10 @@ module.exports = function (app, options) {
     var mongoose = options.mongoose,
         Schema = options.mongoose.Schema,
         db = options.db,
-        kittenModel = require('./kittenModel')(db);
+        accountModel = require('./accountModel')(db);
 
-    // Get a list of all kitten records.
-    app.get('/api/1.0.0/kitten', function (req, res) {
+    // Get a list of all account records.
+    app.get('/api/1.0.0/account', function (req, res) {
         // Mongoose querying via querystring. 
         // Ex: append ?limit=2 or ?filter={"name": "Ido"}
         var qSkip = req.query.skip,
@@ -14,60 +14,60 @@ module.exports = function (app, options) {
             qSort = req.query.sort,
             qFilter = req.query.filter ? JSON.parse(req.query.filter) : {};
 
-        kittenModel.find(qFilter)
+        accountModel.find(qFilter)
             .sort(qSort)
             .skip(qSkip)
             .limit(qLimit)
-            .exec(function (err, kitten) {
+            .exec(function (err, account) {
                 if (err) return options.handleError(err, req, res, 'Could not list the records.');
                 
                 res.send({
-                    records: kitten.length,
-                    kitten: kitten
+                    records: account.length,
+                    account: account
                 });
             });
     });
 
-    // Create a new kitten.
-    app.post('/api/1.0.0/kitten', function (req, res) {
-        var kitten = new kittenModel(req.body);
+    // Create a new account.
+    app.post('/api/1.0.0/account', function (req, res) {
+        var account = new accountModel(req.body);
 
         // todo: add extra test to check if record exists, to avoid duplicates. Call handleError if needed.
 
-        kitten.createAt = Date.now();
+        account.createAt = Date.now();
 
-        kitten.save(function (err) {
+        account.save(function (err) {
             if (err) return options.handleError(err, req, res, 'Could not create the record.');
             
             res.send({
                 created: true,
-                kitten: kitten
+                account: account
             });
         });
     });
 
-    // Get a single kitten by its unique id.
-    app.get('/api/1.0.0/kitten/:id', function (req, res) {
-        kittenModel.findById(req.params.id, function (err, kitten) {
+    // Get a single account by its unique id.
+    app.get('/api/1.0.0/account/:id', function (req, res) {
+        accountModel.findById(req.params.id, function (err, account) {
             if (err) return options.handleError(err, req, res, 'Could not find the record.');
             
             res.send({
-                found: kitten !== null,
-                kitten: kitten
+                found: account !== null,
+                account: account
             });
         });
     });
 
-    // Find a single kitten by its unique id and update its record.
-    app.put('/api/1.0.0/kitten/:id', function (req, res) {
-        kittenModel.findById(req.params.id, function (err, kitten) {
+    // Find a single account by its unique id and update its record.
+    app.put('/api/1.0.0/account/:id', function (req, res) {
+        accountModel.findById(req.params.id, function (err, account) {
             if (err) return options.handleError(err, req, res, 'Could not find the record to update.');
 
             var updated = req.body;
             updated.updateAt = Date.now();
-            updated.__v = kitten.__v + 1;
+            updated.__v = account.__v + 1;
 
-            kitten.update(
+            account.update(
                 updated,
                 {
                     safe: true,
@@ -81,7 +81,7 @@ module.exports = function (app, options) {
                     res.send({
                         numberAffected: numberAffected,
                         raw: raw,
-                        previous: kitten,
+                        previous: account,
                         updated: req.body
                     });
                 }
@@ -89,14 +89,14 @@ module.exports = function (app, options) {
         });
     });
 
-    // Delete a single kitten record by its unique id.
-    app.delete('/api/1.0.0/kitten/:id', function (req, res) {
-        kittenModel.findByIdAndRemove(req.params.id, function (err, kitten) {
+    // Delete a single account record by its unique id.
+    app.delete('/api/1.0.0/account/:id', function (req, res) {
+        accountModel.findByIdAndRemove(req.params.id, function (err, account) {
             if (err) return options.handleError(err, req, res, 'Could not delete the record.');
 
             res.send({
                 deleted: true,
-                kitten: kitten
+                account: account
             });
         });
     });

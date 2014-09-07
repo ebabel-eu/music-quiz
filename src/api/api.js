@@ -1,6 +1,7 @@
 module.exports = function (app, options) {
 
 	var kitten;
+	var account;
 
 	options.handleError = function (err, req, res, msg) {
 		res.send({
@@ -12,4 +13,5 @@ module.exports = function (app, options) {
 	}
 
     kitten = require('./kitten/kittenController.js')(app, options);
+    account = require('./account/accountController.js')(app, options);
 }
