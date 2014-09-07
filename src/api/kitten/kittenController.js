@@ -16,7 +16,7 @@ module.exports = function (app, options) {
             .skip(qSkip)
             .limit(qTake)
             .exec(function (err, kitten) {
-                if (err) return handleError(err);
+                if (err) return options.handleError(err, res);
                 res.send(kitten);
             });
     });
@@ -25,7 +25,7 @@ module.exports = function (app, options) {
         var kitten = new kittenModel(req.body);
 
         kitten.save(function (err) {
-            if (err) return handleError(err);
+            if (err) return options.handleError(err, res);
             // todo: add extra test to check if record exists, to avoid duplicates. Call handleError if needed.
             res.send(kitten);
         });
