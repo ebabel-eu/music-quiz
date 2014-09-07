@@ -5,7 +5,9 @@ module.exports = function (app, options) {
         db = options.db,
         kittenModel = require('./kittenModel')(db);
 
+    // Get a list of kitten.
     app.get('/api/1.0.0/kitten', function (req, res) {
+        // Mongoose querying via querystring.
         var qSkip = req.query.skip,
             qTake = req.query.take,
             qSort = req.query.sort,
@@ -21,6 +23,7 @@ module.exports = function (app, options) {
             });
     });
 
+    // Create a new kitten.
     app.post('/api/1.0.0/kitten', function (req, res) {
         var kitten = new kittenModel(req.body);
 
@@ -31,11 +34,12 @@ module.exports = function (app, options) {
         });
     });
 
+    // Get a single kitten by its unique id.
     app.get('/api/1.0.0/kitten/:id', function (req, res) {
-        return 
-            kittenModel.findById(req.params.id, function (err, kitten) {
-                // todo: implement error response.
-            });
+        kittenModel.findById(req.params.id, function (err, kitten) {
+            if (err) return options.handleError(err, res);
+            res.send(kitten);
+        });
     });
 
     app.put('/api/1.0.0/kitten/:id', function (req, res) {
