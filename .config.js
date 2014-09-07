@@ -25,6 +25,8 @@ module.exports = {
         applicationKey: 'YOUR DECIBEL API APPLICATION KEY'
     },
 
+    mongodb: 'ADDRESS OF MONGODB',
+
     // SSL.
     ssl: {
         key: 'PATH TO YOUR SSL PRIVATE KEY',

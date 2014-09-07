@@ -9,6 +9,7 @@
         compression = require('compression'),
         bodyParser = require('body-parser'),
         mongoose = require('mongoose'),
+        db = mongoose.createConnection(config.mongodb),
         ssl = {
             key: fs.readFileSync(config.ssl.key),
             cert: fs.readFileSync(config.ssl.cert),
@@ -17,7 +18,8 @@
         },
         app = express(),
         server,
-        authUrl;
+        authUrl,
+        api;
 
     // Optional ssl parameter: certificate authority ca
     if (config.ssl.ca) {
@@ -60,90 +62,13 @@
         next();
     });
 
-
-    mongoose.connect( 'mongodb://localhost/music-quiz' );
-    var db = mongoose.connection,
-        Schema,
-        FBUser,
-        objFBUser,
-        currentFBUser;
-
-    db.on('error', console.error.bind(console, 'connection error:'));
-    db.once('open', function callback () {
-      console.log("mongoose connection OK " );
-
-        Schema   = mongoose.Schema;
-        FBUser = new Schema({
-            user_id    : String,
-            firstname  : String,
-            lastname   : String,
-            gender     : String,
-            age_range  : String,
-            created_at : Date,
-            updated_at : Date
-        });
- 
-        FBUser.pre('save', function(next){
-          var now = new Date();
-          this.updated_at = now;
-          if ( !this.created_at ) {
-            this.created_at = now;
-          }
-          next();
-        });
-
-        objFBUser = mongoose.model( 'FBUser', FBUser );
-
-        currentFBUser = new objFBUser({user_id:'41',firstname:'Mark',lastname:'Zuckerberg',gender:'M',age_range:'21+'  });
-
-        console.log(currentFBUser);
-        currentFBUser.save(); 
-
-    });
-
-
-
-    app.post('/api/test', function(req, res) { //A
-        var object = req.body;
-        var collection = req.params;
-        console.log(collection);
-        console.log(object);
-        // collectionDriver.save(collection, object, function(err,docs) {
-        //       if (err) { res.send(400, err); } 
-        //       else { res.send(201, docs); } //B
-        //  });
-        res.send('hello world')
-    });
-
-    app.post('/api/:version/account', function (req, res) {
-        var account = req.body;
-
-        account.apiVersion = req.params.version;
-
-
-        currentFBUser = new objFBUser({user_id:account.id,firstname:account.firstname,lastname:account.lastname,gender:'M',age_range:'21+'  });
-
-        console.log(currentFBUser);
-        currentFBUser.save(); 
-
-        // Check if this is a new account signup.
-        account.signup = true;
-
-        // Check if account has been saved
-        account.saved = true;
-
-        res.send(account);
-    });
-
+    // REST server side API.
+    api = require('./src/api/api.js')(app, {'mongoose': mongoose, 'db': db});
 
     // Handle all static file GET requests.
     app.use(express.static(__dirname + config.publicDirectory), {
         maxAge: config.expiryDate
     });
-
-
-
-
 
     // Start listening on a port.
     server = https.createServer(ssl, app).listen(config.port, function() {
