@@ -7,7 +7,9 @@ var kittenSchema = function () {
             type: String,
             index: true
         },
-        dateOfBirth: Date
+        dateOfBirth: Date,
+        createAt: Date,
+        updateAt: Date
 	});
 }
 

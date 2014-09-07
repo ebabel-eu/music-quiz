@@ -47,7 +47,7 @@
     // Set generic headers used in all responses.
     app.use(function (req, res, next) {
         res.set({
-            'X-Powered-By': 'AngularJS',
+            'X-Powered-By': 'MEAN stack',
             'Access-Control-Allow-Methods': 'GET, POST, ssl',               // Allowed request http verbs.
             'Access-Control-Allow-Headers': 'X-Requested-With,content-type',    // Allowed request headers.
             'Cache-Control': 'public, max-age=' + config.expiryDate,
