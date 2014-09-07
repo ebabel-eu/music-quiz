@@ -6,7 +6,9 @@ var kittenSchema = function () {
         name: {
             type: String,
             index: true,
-            unique: true
+            unique: true,
+            required: true,
+            dropDups: true
         },
         dateOfBirth: Date,
         createAt: Date,
