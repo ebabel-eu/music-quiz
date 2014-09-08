@@ -1,7 +1,7 @@
 // Sync Facebook and Music Quiz account for the current gamer.
-musicQuizApp.service('accountService', ['$rootScope', '$http', 
+musicQuizApp.service('accountService', ['$rootScope', '$http', 'accountFactory', 
 
-    function ($rootScope, $http) {
+    function ($rootScope, $http, accountFactory) {
         'use strict';
 
         var postGamerDetailsToAccount,
@@ -19,6 +19,10 @@ musicQuizApp.service('accountService', ['$rootScope', '$http',
         }
 
         postGamerDetailsToAccount = function (gamer) {
+
+            // todo: use accountFactory instead of $http. See O'Reily book in location 3744.
+            // todo: consider doing an update if the record already exists.
+
             $http.post('/api/1.0.0/account', gamer)
                     .success(successCallback)
                     .error(errorCallback);
