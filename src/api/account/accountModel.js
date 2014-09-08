@@ -3,6 +3,7 @@ var accountSchema = function () {
     var Schema = require("mongoose").Schema;
 
     return new Schema({
+        // Paths supplied by the Facebook Graph API.
         id: {
             type: Number,
             index: true,
@@ -33,6 +34,8 @@ var accountSchema = function () {
             max: Number,
             min: Number
         },
+
+        // Paths supplied by musicQuizApp.
         createdAt: Date,
         updatedAt: Date
     });

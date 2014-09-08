@@ -32,8 +32,6 @@ module.exports = function (app, options) {
     app.post('/api/1.0.0/account', function (req, res) {
         var account = new accountModel(req.body);
 
-        // todo: add extra test to check if record exists, to avoid duplicates. Call handleError if needed.
-
         account.createAt = Date.now();
 
         account.save(function (err) {

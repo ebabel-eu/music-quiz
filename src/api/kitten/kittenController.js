@@ -32,8 +32,6 @@ module.exports = function (app, options) {
     app.post('/api/1.0.0/kitten', function (req, res) {
         var kitten = new kittenModel(req.body);
 
-        // todo: add extra test to check if record exists, to avoid duplicates. Call handleError if needed.
-
         kitten.createAt = Date.now();
 
         kitten.save(function (err) {

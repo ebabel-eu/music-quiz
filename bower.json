@@ -2,8 +2,9 @@
   "name": "musicQuiz",
   "version": "1.0.0",
   "dependencies": {
-    "angular": "1.2.21",
-    "angular-route": "1.2.21",
+    "angular": "1.2.23",
+    "angular-route": "1.2.23",
+    "angular-resource": "1.2.23",
     "angular-bootstrap": "0.11.0",
     "angular-spinner": "0.5.1",
     "angular-facebook": "0.2.3"
@@ -35,5 +36,8 @@
     "**/.*",
     "node_modules",
     "bower_components"
-  ]
+  ],
+  "resolutions": {
+    "angular": "1.2.23"
+  }
 }

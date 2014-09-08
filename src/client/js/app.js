@@ -1,1 +1,1 @@
-var musicQuizApp = angular.module('musicQuizApp', ['ngRoute', 'angularSpinner', 'facebook']);
+var musicQuizApp = angular.module('musicQuizApp', ['ngRoute', 'ngResource', 'angularSpinner', 'facebook']);
